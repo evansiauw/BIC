@@ -100,12 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				0133457E2249731F006F96F0 /* AppDelegate.swift */,
-				013345802249731F006F96F0 /* ViewController.swift */,
-				013345822249731F006F96F0 /* Main.storyboard */,
-				0133458822497321006F96F0 /* Assets.xcassets */,
-				0133458A22497321006F96F0 /* LaunchScreen.storyboard */,
-				0133458D22497321006F96F0 /* Info.plist */,
-				013345852249731F006F96F0 /* BIC.xcdatamodeld */,
+				013345B2224974B5006F96F0 /* Controllers */,
+				013345B122497427006F96F0 /* Supporting Files */,
+				013345AF2249738A006F96F0 /* Helper */,
+				013345B022497400006F96F0 /* Models */,
 			);
 			path = BIC;
 			sourceTree = "<group>";
@@ -126,6 +124,56 @@
 				013345A322497321006F96F0 /* Info.plist */,
 			);
 			path = BICUITests;
+			sourceTree = "<group>";
+		};
+		013345AF2249738A006F96F0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				013345B422497CF5006F96F0 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		013345B022497400006F96F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				013345852249731F006F96F0 /* BIC.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		013345B122497427006F96F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0133458822497321006F96F0 /* Assets.xcassets */,
+				0133458A22497321006F96F0 /* LaunchScreen.storyboard */,
+				0133458D22497321006F96F0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		013345B2224974B5006F96F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				013345B322497C7F006F96F0 /* MainViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		013345B322497C7F006F96F0 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				013345802249731F006F96F0 /* ViewController.swift */,
+				013345822249731F006F96F0 /* Main.storyboard */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		013345B422497CF5006F96F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
