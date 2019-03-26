@@ -15,6 +15,7 @@
 		0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133458A22497321006F96F0 /* LaunchScreen.storyboard */; };
 		0133459722497321006F96F0 /* BICTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133459622497321006F96F0 /* BICTests.swift */; };
 		013345A222497321006F96F0 /* BICUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345A122497321006F96F0 /* BICUITests.swift */; };
+		013345B62249A052006F96F0 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345B52249A052006F96F0 /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0133459D22497321006F96F0 /* BICUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BICUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013345A122497321006F96F0 /* BICUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BICUITests.swift; sourceTree = "<group>"; };
 		013345A322497321006F96F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		013345B52249A052006F96F0 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../../../../UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		013345B422497CF5006F96F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				013345B52249A052006F96F0 /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				013345872249731F006F96F0 /* BIC.xcdatamodeld in Sources */,
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
+				013345B62249A052006F96F0 /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J5VKCJHB4;
-				INFOPLIST_FILE = BIC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BIC/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,7 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J5VKCJHB4;
-				INFOPLIST_FILE = BIC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BIC/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
