@@ -15,7 +15,16 @@
 		0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133458A22497321006F96F0 /* LaunchScreen.storyboard */; };
 		0133459722497321006F96F0 /* BICTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133459622497321006F96F0 /* BICTests.swift */; };
 		013345A222497321006F96F0 /* BICUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345A122497321006F96F0 /* BICUITests.swift */; };
-		013345B62249A052006F96F0 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345B52249A052006F96F0 /* UIView+Constraints.swift */; };
+		013345B9224A718E006F96F0 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345B8224A718E006F96F0 /* profileViewController.swift */; };
+		013345BB224A736D006F96F0 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013345BA224A736D006F96F0 /* profile.storyboard */; };
+		013345BD224A77F9006F96F0 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345BC224A77F9006F96F0 /* UIStoryboard.swift */; };
+		013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345BE224AE1D0006F96F0 /* UIImageView.swift */; };
+		013345C1224AF95C006F96F0 /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C0224AF95C006F96F0 /* ViewController+TableView.swift */; };
+		013345C4224BF88E006F96F0 /* mainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C3224BF88E006F96F0 /* mainTableViewCell.swift */; };
+		013345C6224C0B41006F96F0 /* headerMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C5224C0B41006F96F0 /* headerMainTableView.swift */; };
+		013345C8224C4F04006F96F0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C7224C4F04006F96F0 /* UIButton.swift */; };
+		013345CA224C53F3006F96F0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C9224C53F3006F96F0 /* UIColor.swift */; };
+		013345CF22511307006F96F0 /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345CE22511307006F96F0 /* mainCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +59,16 @@
 		0133459D22497321006F96F0 /* BICUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BICUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013345A122497321006F96F0 /* BICUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BICUITests.swift; sourceTree = "<group>"; };
 		013345A322497321006F96F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		013345B52249A052006F96F0 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../../../../UIView+Constraints.swift"; sourceTree = "<group>"; };
+		013345B8224A718E006F96F0 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		013345BA224A736D006F96F0 /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
+		013345BC224A77F9006F96F0 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIStoryboard.swift; path = BIC/Controllers/UIStoryboard.swift; sourceTree = SOURCE_ROOT; };
+		013345BE224AE1D0006F96F0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = BIC/Controllers/UIImageView.swift; sourceTree = SOURCE_ROOT; };
+		013345C0224AF95C006F96F0 /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
+		013345C3224BF88E006F96F0 /* mainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTableViewCell.swift; sourceTree = "<group>"; };
+		013345C5224C0B41006F96F0 /* headerMainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerMainTableView.swift; sourceTree = "<group>"; };
+		013345C7224C4F04006F96F0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = "BIC/Controllers/MainView/View Cell/UIButton.swift"; sourceTree = SOURCE_ROOT; };
+		013345C9224C53F3006F96F0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = "BIC/Controllers/MainView/View Cell/UIColor.swift"; sourceTree = SOURCE_ROOT; };
+		013345CE22511307006F96F0 /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,24 +175,57 @@
 		013345B2224974B5006F96F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				013345B322497C7F006F96F0 /* MainViewController */,
+				013345B7224A70A1006F96F0 /* Profile */,
+				013345B322497C7F006F96F0 /* MainView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		013345B322497C7F006F96F0 /* MainViewController */ = {
+		013345B322497C7F006F96F0 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				013345CB224EFABB006F96F0 /* Extensions */,
+				013345C2224BF846006F96F0 /* View Cell */,
 				013345802249731F006F96F0 /* ViewController.swift */,
 				013345822249731F006F96F0 /* Main.storyboard */,
 			);
-			path = MainViewController;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		013345B422497CF5006F96F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				013345B52249A052006F96F0 /* UIView+Constraints.swift */,
+				013345BC224A77F9006F96F0 /* UIStoryboard.swift */,
+				013345BE224AE1D0006F96F0 /* UIImageView.swift */,
+				013345C7224C4F04006F96F0 /* UIButton.swift */,
+				013345C9224C53F3006F96F0 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		013345B7224A70A1006F96F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				013345B8224A718E006F96F0 /* profileViewController.swift */,
+				013345BA224A736D006F96F0 /* profile.storyboard */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		013345C2224BF846006F96F0 /* View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				013345C3224BF88E006F96F0 /* mainTableViewCell.swift */,
+				013345CE22511307006F96F0 /* mainCollectionViewCell.swift */,
+			);
+			path = "View Cell";
+			sourceTree = "<group>";
+		};
+		013345CB224EFABB006F96F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				013345C0224AF95C006F96F0 /* ViewController+TableView.swift */,
+				013345C5224C0B41006F96F0 /* headerMainTableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */,
+				013345BB224A736D006F96F0 /* profile.storyboard in Resources */,
 				0133458922497321006F96F0 /* Assets.xcassets in Resources */,
 				013345842249731F006F96F0 /* Main.storyboard in Resources */,
 			);
@@ -310,10 +362,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013345BD224A77F9006F96F0 /* UIStoryboard.swift in Sources */,
+				013345CA224C53F3006F96F0 /* UIColor.swift in Sources */,
+				013345C6224C0B41006F96F0 /* headerMainTableView.swift in Sources */,
+				013345CF22511307006F96F0 /* mainCollectionViewCell.swift in Sources */,
 				013345872249731F006F96F0 /* BIC.xcdatamodeld in Sources */,
+				013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */,
+				013345C4224BF88E006F96F0 /* mainTableViewCell.swift in Sources */,
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
-				013345B62249A052006F96F0 /* UIView+Constraints.swift in Sources */,
+				013345B9224A718E006F96F0 /* profileViewController.swift in Sources */,
+				013345C8224C4F04006F96F0 /* UIButton.swift in Sources */,
+				013345C1224AF95C006F96F0 /* ViewController+TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
