@@ -23,21 +23,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableViewCell
         
-//        cell.layoutIfNeeded()
-//        cell.collectionView.reloadData()
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
-//        headerView.backgroundColor = .gray
-//        return headerView
-//    }
+
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -55,3 +44,32 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        cell.layoutIfNeeded()
+//        cell.collectionView.reloadData()
+
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
+//        headerView.backgroundColor = .gray
+//        return headerView
+//    }

@@ -29,7 +29,7 @@ class ViewController: UIViewController{
         tv.dataSource = self
 //        tv.rowHeight = UITableView.automaticDimension
 //        tv.estimatedRowHeight = 150
-        tv.rowHeight = 150
+        tv.rowHeight = 170
         return tv
     }()
     
@@ -45,10 +45,11 @@ class ViewController: UIViewController{
         
         let button = UIButton(frame: CGRect(x: 20, y: 25, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
-        button.titleLabel?.font = UIFont(name: "Bradley Hand", size: 25)
-        button.setTitle("OUR VISION", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
-        button.backgroundColor = UIColor(rgb: 0xd0ceaa)
+        button.backgroundColor = .white
+        button.setImage(UIImage(named: "ourVision"), for: .normal)
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -57,10 +58,11 @@ class ViewController: UIViewController{
         
         let button = UIButton(frame: CGRect(x: 20, y: 150, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
-        button.titleLabel?.font = UIFont(name: "Bradley Hand", size: 25)
-        button.setTitle("OUR MISSION", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
-        button.backgroundColor = UIColor(rgb: 0xd0e6ff)
+        button.backgroundColor = .white
+        button.setImage(UIImage(named: "ourMission"), for: .normal)
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.imageView?.contentMode = .top
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,10 +71,11 @@ class ViewController: UIViewController{
         
         let button = UIButton(frame: CGRect(x: 20, y: 275, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
-        button.titleLabel?.font = UIFont(name: "Bradley Hand", size: 25)
-        button.setTitle("OUR CORE VALUE", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
-        button.backgroundColor = UIColor(rgb: 0xffd0ff)
+        button.backgroundColor = .white
+        button.setImage(UIImage(named: "ourCoreValues"), for: .normal)
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.imageView?.contentMode = .left
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

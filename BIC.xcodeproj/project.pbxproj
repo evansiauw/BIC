@@ -184,10 +184,10 @@
 		013345B322497C7F006F96F0 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				013345CB224EFABB006F96F0 /* Extensions */,
-				013345C2224BF846006F96F0 /* View Cell */,
 				013345802249731F006F96F0 /* ViewController.swift */,
 				013345822249731F006F96F0 /* Main.storyboard */,
+				013345CB224EFABB006F96F0 /* Extensions */,
+				013345C2224BF846006F96F0 /* View Cell */,
 			);
 			path = MainView;
 			sourceTree = "<group>";

@@ -12,20 +12,20 @@ class mainTableViewCell: UITableViewCell {
 
     var collectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
-        
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-        layout.itemSize = CGSize(width: self.frame.width / 2.5, height: self.frame.width / 2.5)
-
-       let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        layout.itemSize = CGSize(width: self.frame.width / 2.5, height: self.frame.width / 2)
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
@@ -48,7 +48,7 @@ class mainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-
+    
 }
 
 extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -64,9 +64,15 @@ extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath as IndexPath) as! mainCollectionViewCell
-                
+        
         return cell
     }
+    
+//    override func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
+//        <#code#>
+//    }
+//
+    
 
 }
 
