@@ -6,6 +6,7 @@
 //  Copyright © 2019 Iwan Siauw. All rights reserved.
 //
 
+// TODO: Need to fix delay content touches in TableView
 import UIKit
 
 class ViewController: UIViewController{
@@ -27,9 +28,10 @@ class ViewController: UIViewController{
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.delegate = self
         tv.dataSource = self
-//        tv.rowHeight = UITableView.automaticDimension
-//        tv.estimatedRowHeight = 150
-        tv.rowHeight = 170
+//        tv.delaysContentTouches = false
+        tv.rowHeight = UITableView.automaticDimension
+        tv.estimatedRowHeight = 300
+        
         return tv
     }()
     
@@ -86,7 +88,9 @@ class ViewController: UIViewController{
         navigationBar()
         mainScreen()
     }
-   
+
+    
+
     // Navigation bar setup on the main screen
     func navigationBar(){
         

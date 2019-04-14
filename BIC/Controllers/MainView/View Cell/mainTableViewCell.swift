@@ -16,10 +16,12 @@ class mainTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        print("collectionView init first called")
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-        layout.itemSize = CGSize(width: self.frame.width / 2.5, height: self.frame.width / 2)
+//        layout.itemSize = CGSize(width: self.frame.width / 2, height: 200)
+//        layout.invalidateLayout()
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -31,6 +33,8 @@ class mainTableViewCell: UITableViewCell {
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         self.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        print("collectionView init finish executed")
         
     }
     
@@ -49,11 +53,12 @@ class mainTableViewCell: UITableViewCell {
         
     }
     
+    
 }
 
-extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
+extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    
+
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -63,17 +68,42 @@ extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath as IndexPath) as! mainCollectionViewCell
         
+        print("collectionView cellForItemAt tag \(collectionView.tag) is called")
+        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath as IndexPath) as! mainCollectionViewCell
+ 
+        print("collectionView dequeue cell is called")
         return cell
+        
+        
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
-//        <#code#>
-//    }
-//
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        print("collection view layout is called")
+        if self.collectionView.tag == 0 {
+            print("collection view tag 0 is called")
+            return CGSize(width: self.frame.width - 50, height: self.frame.height)
+        } else if self.collectionView.tag == 1{
+            print("collection view tag 1 is called")
+            return CGSize(width: self.frame.width / 2, height: self.frame.height)
+        } else {
+            print("collection view tag 2 or above is called")
+            return CGSize(width: self.frame.width / 2.5, height: self.frame.height)
+        }
+
+        
+        
+//        print(indexPath.section)
+//        if indexPath.section == 0 {
+//            return CGSize(width: self.frame.width, height: self.frame.height)
+//        } else {
+//            return CGSize(width: self.frame.width / 2.5, height: self.frame.width / 2)
+//        }
+    }
+    
+    
+    
 }
 
 
@@ -86,16 +116,8 @@ extension mainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
 
 
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        print(indexPath.row)
-//        if indexPath.row % 2 == 0{
-//            return CGSize(width: 125, height: 125)
-//        } else {
-//            return CGSize(width: 75, height: 75)
-//        }
-//
-//    }
+
+
 
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
