@@ -23,35 +23,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableViewCell
         
+        cell.layoutIfNeeded()
         cell.collectionView.tag = indexPath.section
-        print("tableView cellForRow at cell \(indexPath.section)")
+        cell.collectionView.reloadData()
+//        cell.collectionView.collectionViewLayout.invalidateLayout()
         return cell
     }
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//
-//        let collectionView = mainTableViewCell()
-//        let flowLayout = collectionView.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        flowLayout.itemSize = CGSize(width: 500, height: 500)
-//    }
-//    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        
-//        let cell = cell as? mainTableViewCell
-//        cell?.collectionView.reloadData()
-//    }
-
-
-
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+
         let title = headerTitle[section]
         return title
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -60,24 +46,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        print("getting tableView cell heightForRow at section \(indexPath.section)")
-
         if indexPath.section == 0 {
-            print("tableView indexPath.section \(indexPath.section) with height 200")
-            return 200
+            return 230
         } else if indexPath.section == 1 {
-            print("tableView indexPath.section \(indexPath.section) with height 250")
             return 250
         } else {
-            print("tableView indexPath.section \(indexPath.section) with height 180")
             return 180
         }
-
-
     }
-
     
-
 
 }
 
@@ -96,8 +73,32 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 
 
-//        cell.layoutIfNeeded()
-//        cell.collectionView.reloadData()
+
+
+
+
+
+
+
+
+
+
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//
+//        let collectionView = mainTableViewCell()
+//        let flowLayout = collectionView.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        flowLayout.itemSize = CGSize(width: 500, height: 500)
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        guard let tableViewcell = cell as? mainTableViewCell else { return }
+//        tableViewcell.collectionView.reloadData()
+////        cell.collectionView.collectionViewLayout.invalidateLayout()
+//        print("*******************************************")
+//    }
 
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 100

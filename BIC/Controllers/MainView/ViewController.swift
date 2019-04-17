@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController{
     
-    var headerTitle = ["Announcement", "Upcoming Events", "Verse of the Day", "Testimony", "Weekly Message", "Monthly Theme"]
+    var headerTitle = ["Announcements", "Upcoming Events", "Verse of the Day", "Weekly Message", "Monthly Theme"]
     
     lazy var titleImage: UIImageView = {
 
@@ -28,9 +28,10 @@ class ViewController: UIViewController{
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.delegate = self
         tv.dataSource = self
-//        tv.delaysContentTouches = false
+        tv.estimatedRowHeight = 250
         tv.rowHeight = UITableView.automaticDimension
-        tv.estimatedRowHeight = 300
+//        tv.delaysContentTouches = false
+//        tv.rowHeight = 250
         
         return tv
     }()
@@ -88,8 +89,6 @@ class ViewController: UIViewController{
         navigationBar()
         mainScreen()
     }
-
-    
 
     // Navigation bar setup on the main screen
     func navigationBar(){

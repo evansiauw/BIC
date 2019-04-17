@@ -35,9 +35,13 @@ class mainCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.contentView.addSubview(cellImage)
-        self.contentView.addSubview(titleLabel)
+        self.addSubview(cellImage)
+        self.addSubview(titleLabel)
 
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
     }
     
     required init?(coder aDecoder: NSCoder) {
