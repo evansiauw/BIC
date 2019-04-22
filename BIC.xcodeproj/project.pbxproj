@@ -76,8 +76,8 @@
 		0133459D22497321006F96F0 /* BICUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BICUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013345A122497321006F96F0 /* BICUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BICUITests.swift; sourceTree = "<group>"; };
 		013345A322497321006F96F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		013345B8224A718E006F96F0 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileViewController.swift; path = Profile/profileViewController.swift; sourceTree = "<group>"; };
-		013345BA224A736D006F96F0 /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = profile.storyboard; path = Profile/profile.storyboard; sourceTree = "<group>"; };
+		013345B8224A718E006F96F0 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		013345BA224A736D006F96F0 /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
 		013345BC224A77F9006F96F0 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIStoryboard.swift; path = BIC/Helper/Extensions/UIStoryboard.swift; sourceTree = SOURCE_ROOT; };
 		013345BE224AE1D0006F96F0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = BIC/Helper/Extensions/UIImageView.swift; sourceTree = SOURCE_ROOT; };
 		013345C0224AF95C006F96F0 /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -225,9 +225,9 @@
 		013345B2224974B5006F96F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01713A20226E7F5E0008013E /* Profile */,
 				01713A13226907720008013E /* mainDetailView */,
 				01713A0E2268EAA00008013E /* eventDetailView */,
-				013345B7224A70A1006F96F0 /* Profile */,
 				013345B322497C7F006F96F0 /* MainView */,
 			);
 			path = Controllers;
@@ -256,15 +256,6 @@
 				013935492267D2F800E32ECB /* UIView.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		013345B7224A70A1006F96F0 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				013345B8224A718E006F96F0 /* profileViewController.swift */,
-				013345BA224A736D006F96F0 /* profile.storyboard */,
-			);
-			name = Profile;
 			sourceTree = "<group>";
 		};
 		013345C2224BF846006F96F0 /* TableView Cell */ = {
@@ -311,6 +302,16 @@
 				01713A162269080D0008013E /* mainDetailViewController.swift */,
 			);
 			path = mainDetailView;
+			sourceTree = "<group>";
+		};
+		01713A20226E7F5E0008013E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				013345B8224A718E006F96F0 /* profileViewController.swift */,
+				013345BA224A736D006F96F0 /* profile.storyboard */,
+			);
+			name = Profile;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C6EC3F9830447A1C36999B2A /* Frameworks */ = {
