@@ -8,10 +8,24 @@
 
 // TODO: Need to fix delay content touches in TableView
 import UIKit
+import Firebase
 
 class ViewController: UIViewController{
     
-    var headerTitle = ["Announcements", "Upcoming Events", "Verse of the Day", "Weekly Message", "Monthly Theme"]
+    var db: Firestore!
+    
+    // TableView Sections Properties
+    lazy var screenSize: CGFloat = UIScreen.main.bounds.width
+    let tableViewTitle = ["Announcements", "Upcoming Events", "Weekly Devotional", "Testimonies"]
+    lazy var tableViewWidth: [CGFloat] = [screenSize/1.1, screenSize/2.2, screenSize/2.5, screenSize/2.5]
+    let tableViewHeight: [CGFloat] = [230,250,150,150]
+
+    // TableView Models
+//    lazy var modelArray = [announcements, events, devotionals, testimonies]
+    var announcements = [announcement]()
+    var events = [event]()
+    var devotionals = [devotional]()
+    var testimonies = [testimony]()
     
     lazy var titleImage: UIImageView = {
 
@@ -32,7 +46,6 @@ class ViewController: UIViewController{
         tv.rowHeight = UITableView.automaticDimension
 //        tv.delaysContentTouches = false
 //        tv.rowHeight = 250
-        
         return tv
     }()
     
@@ -83,12 +96,18 @@ class ViewController: UIViewController{
         return button
     }()
     
-    
-   override func viewDidLoad() {
+    override func viewDidLoad(){
+        
         super.viewDidLoad()
+        db = Firestore.firestore()
+        
         navigationBar()
         mainScreen()
+        loadTableView()
+
     }
+    
+
 
     // Navigation bar setup on the main screen
     func navigationBar(){
@@ -104,7 +123,7 @@ class ViewController: UIViewController{
         
         // Right Bar Menu Button
         let profileImage = UIImage(named: "profileMenu")
-        let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonClicked))
+        let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
@@ -127,18 +146,144 @@ class ViewController: UIViewController{
         containerFooterView.addSubview(secondFooterButton)
         containerFooterView.addSubview(thirdFooterButton)
         
-    
     }
+    
+    
+    func loadTableView() {
+
+        for title in tableViewTitle{
+
+            let sectionName = title
+            db.collection(sectionName).getDocuments(){ DocumentSnapshot, error in
+
+                guard let doc = DocumentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    return
+                }
+
+                switch sectionName {
+
+                case "Announcements" :
+                    self.announcements = doc.documents.compactMap({announcement(Dictionary: $0.data())})
+                case "Upcoming Events" :
+                    self.events = doc.documents.compactMap({event(Dictionary: $0.data())})
+                case "Weekly Devotional" :
+                    self.devotionals = doc.documents.compactMap({devotional(Dictionary: $0.data())})
+                case "Testimonies" :
+                    self.testimonies = doc.documents.compactMap({testimony(Dictionary: $0.data())})
+                default:
+                    break
+                }
+            }
+        }
+
+    }
+    
+    
 
 }
 
 
-//lazy var firstFooterText: UITextField = {
-//
-//    let text = UITextField(frame: CGRect(x: 0, y: 0, width: firstFooterImage.frame.width, height: firstFooterImage.frame.height))
-//    text.text = "OUR VISION"
-//    text.textColor = .gray
-//    text.font = UIFont(name: "System", size: 20)
-//    return text
-//}()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    func createData(){
+//
+//        let docData: [String: Any] = [
+//
+//            "title": "test",
+//            "description": "test",
+//            "image": "test",
+//            "time": Timestamp(date: Date())
+//        ]
+//
+//        let eventdocData: [String: Any] = [
+//
+//            "title": "test",
+//            "description": "test",
+//            "image": "test",
+//            "eventTime": Timestamp(date: Date()),
+//            "attendee": 50,
+//            "address": "test"
+//        ]
+//
+//        for _ in 1...6 {
+//            db.collection("Weekly Devotional").document().setData(docData){ err in
+//
+//                if let err = err {
+//                    print("Error writing to document: \(err)")
+//                } else {
+//                    print("Document sucessfully written!")
+//                }
+//
+//            }
+//        }
+//
+//        for _ in 1...6 {
+//            db.collection("Announcements").document().setData(docData){ err in
+//
+//                if let err = err {
+//                    print("Error writing to document: \(err)")
+//                } else {
+//                    print("Document sucessfully written!")
+//                }
+//
+//            }
+//        }
+//
+//
+//        for _ in 1...6 {
+//            db.collection("Upcoming Events").document().setData(eventdocData){ err in
+//
+//                if let err = err {
+//                    print("Error writing to document: \(err)")
+//                } else {
+//                    print("Document sucessfully written!")
+//                }
+//
+//            }
+//        }
+//
+//
+//        for _ in 1...6 {
+//            db.collection("Testimonies").document().setData(docData){ err in
+//
+//                if let err = err {
+//                    print("Error writing to document: \(err)")
+//                } else {
+//                    print("Document sucessfully written!")
+//                }
+//
+//            }
+//        }
+//    }
+//

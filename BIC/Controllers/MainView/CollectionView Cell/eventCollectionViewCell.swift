@@ -11,54 +11,102 @@ import UIKit
 
 class eventCollectionViewCell: UICollectionViewCell {
     
-    let labelContainerHeight: CGFloat = 80
+    let stackContainerHeight: CGFloat = 80
     
     lazy var cellImage: UIImageView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - labelContainerHeight)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - stackContainerHeight)
         let image = UIImageView(frame: frame)
-        image.backgroundColor = .blue
-        image.image = UIImage(named: "godIsGood")
-        image.roundSomeCorners(corners: [.topLeft, .topRight], radius: 8)
+        image.image = UIImage(named: "merryChristmas")
+        image.contentMode = .scaleAspectFill
+        image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    lazy var labelContainerView: UIView = {
-        
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: labelContainerHeight)
-        let view = UIView(frame: frame)
-        view.backgroundColor = .darkGray
-        view.roundSomeCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
+    lazy var titleLabel: UILabel = {
+
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
+        let label = UILabel(frame: frame)
+//        label.text = "Christmas Eve"
+        label.font = UIFont(name: "party Let", size: 30)
+        label.sizeToFit()
+        label.textColor = .brown
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-//    lazy var titleLabel: UILabel = {
-//
-//        let frame = CGRect(x: 0, y: self.frame.height - 80, width: self.frame.width, height: 80)
-//        let label = UILabel(frame: frame)
-//        label.text = "Merry Christmas"
-//        label.textColor = .white
-//        label.backgroundColor = .darkGray
-//        label.textAlignment = .center
-//        label.roundSomeCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
+    lazy var dateLabel: UILabel = {
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
+        let label = UILabel(frame: frame)
+        label.text = "Dec 24th at 7.30PM"
+        label.textColor = .brown
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var attendeesLabel: UILabel = {
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
+        let label = UILabel(frame: frame)
+        label.text = "50 people going"
+        label.textColor = .brown
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var labelStack: UIStackView = {
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: stackContainerHeight)
+        let stack = UIStackView(frame: frame)
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.addArrangedSubview(titleLabel)
+        stack.addArrangedSubview(dateLabel)
+        stack.addArrangedSubview(attendeesLabel)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    lazy var cellStack: UIStackView = {
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        let stack = UIStackView(frame: frame)
+        stack.axis = .vertical
+        stack.spacing = 10
+        stack.distribution = .fillProportionally
+        stack.addArrangedSubview(cellImage)
+        stack.addArrangedSubview(labelStack)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(cellImage)
-        self.addSubview(labelContainerView)
+        self.addSubview(cellStack)
         
+        NSLayoutConstraint.activate([
+            cellStack.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            cellStack.heightAnchor.constraint(equalTo: self.contentView.heightAnchor),
+            cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+            ])
+        
+        NSLayoutConstraint.activate([
+            cellImage.heightAnchor.constraint(equalToConstant: self.frame.height - stackContainerHeight)
+            ])
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 
@@ -86,10 +134,31 @@ class eventCollectionViewCell: UICollectionViewCell {
 
 
 
+//
+//        NSLayoutConstraint.activate([
+//            cellImage.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+//            cellImage.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
+//            cellImage.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
+//            cellImage.heightAnchor.constraint(equalToConstant: self.frame.height - stackContainerHeight)
+//            ])
+//
+//        NSLayoutConstraint.activate([
+//            labelStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+//            labelStack.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 5),
+//            labelStack.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 5),
+//            labelStack.heightAnchor.constraint(equalToConstant: stackContainerHeight)
+//            ])
 
 
-
-
+//    lazy var labelContainerView: UIView = {
+//
+//        let frame = CGRect(x: 0, y: self.frame.height - labelContainerHeight, width: self.frame.width, height: labelContainerHeight)
+//        let view = UIView(frame: frame)
+//        view.backgroundColor = .clear
+//        view.roundSomeViewCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
 
 //lazy var announcementButton: UIButton = {
 //

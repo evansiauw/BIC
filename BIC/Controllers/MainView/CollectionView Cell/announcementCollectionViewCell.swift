@@ -8,15 +8,18 @@
 
 import UIKit
 
+/* TODO:
+ - setup a stack for cellImage and titleLabel
+ - setup constraint for either cellImage or titleLabel
+ */
 class announcementCollectionViewCell: UICollectionViewCell {
-
+    
         lazy var cellImage: UIImageView = {
     
             let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 40)
             let image = UIImageView(frame: frame)
-            image.backgroundColor = .blue
-            image.image = UIImage(named: "godIsGood")
-            image.roundSomeCorners(corners: [.topLeft, .topRight], radius: 8)
+            image.image = UIImage(named: "profileWallpaper")
+            image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
             image.translatesAutoresizingMaskIntoConstraints = false
             return image
         }()
@@ -25,11 +28,13 @@ class announcementCollectionViewCell: UICollectionViewCell {
     
             let frame = CGRect(x: 0, y: self.frame.height - 40, width: self.frame.width, height: 40)
             let label = UILabel(frame: frame)
-            label.text = "Merry Christmas"
+//            label.text = "Hello"
             label.textColor = .white
             label.backgroundColor = .darkGray
             label.textAlignment = .center
-            label.roundSomeCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
+            label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+//            label.font = UIFont(name: "party LET", size: 30)
+            label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -45,6 +50,7 @@ class announcementCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 

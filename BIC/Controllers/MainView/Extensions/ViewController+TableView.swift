@@ -9,30 +9,19 @@
 import Foundation
 import UIKit
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
-        
+extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return headerTitle.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableViewCell
-        
-        cell.layoutIfNeeded()
-        cell.collectionView.tag = indexPath.section
-        cell.collectionView.reloadData()
-//        cell.collectionView.collectionViewLayout.invalidateLayout()
-        return cell
+        return tableViewTitle.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
-        let title = headerTitle[section]
+        let title = tableViewTitle[section]
         return title
     }
     
@@ -45,17 +34,92 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        if indexPath.section == 0 {
-            return 230
-        } else if indexPath.section == 1 {
-            return 250
-        } else {
-            return 180
+        
+        return tableViewHeight[indexPath.section]
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print("table view cell for row dequeue")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableViewCell
+        cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 10
+        print("collection # of item")
+        switch collectionView.tag {
+        case 0 :
+            return announcements.count
+        case 1 :
+            return events.count
+        case 2 :
+            return devotionals.count
+        case 3 :
+            return testimonies.count
+        default:
+            return 0
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        print("collection cell for item dequeue")
+        if collectionView.tag == 0 {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "announcementCollectionViewCell", for: indexPath as IndexPath) as! announcementCollectionViewCell
+            cell.titleLabel.text = announcements[indexPath.item].title
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell
+            
+        } else if collectionView.tag == 1 {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCollectionViewCell", for: indexPath as IndexPath) as! eventCollectionViewCell
+            cell.titleLabel.text = events[indexPath.item].title
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell
+            
+        } else if collectionView.tag == 2{
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCollectionViewCell", for: indexPath as IndexPath) as! mainCollectionViewCell
+            cell.titleLabel.text = devotionals[indexPath.item].title
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell
+        } else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "testimonyCollectionViewCell", for: indexPath as IndexPath) as! testimonyCollectionViewCell
+            cell.titleLabel.text = testimonies[indexPath.item].title
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell
+        }
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        print("collection layout size for item")
+        let width = tableViewWidth[collectionView.tag]
+        let height = tableViewHeight[collectionView.tag]
+        return CGSize(width: width, height: height)
+
+    }
+    
 }
 
 
@@ -73,14 +137,82 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 
 
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        print("table view will display for row at")
+//        guard let tableViewCell = cell as? mainTableViewCell else { return }
+//        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
+//
+//    }
+
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//
+//        print("collection will display")
+//        switch collectionView.tag {
+//
+//        case 0 :
+//            guard let announcementViewCell = cell as? announcementCollectionViewCell else { return }
+//            announcementViewCell.titleLabel.text = announcements[indexPath.item].title
+//        case 1 :
+//            guard let eventViewCell = cell as? eventCollectionViewCell else { return }
+//            eventViewCell.titleLabel.text = events[indexPath.item].title
+//        case 2 :
+//            guard let mainViewCell = cell as? mainCollectionViewCell else { return }
+//            mainViewCell.titleLabel.text = devotionals[indexPath.item].title
+//        case 3 :
+//            guard let testimonyViewCell = cell as? testimonyCollectionViewCell else { return }
+//            testimonyViewCell.titleLabel.text = testimonies[indexPath.item].title
+//        default : break
+//        }
+//
+//    }
 
 
+//    func selectedItem(tag: Int, item: Int) {
+//
+//        print("tag# is \(tag) and item# is \(item)")
+//
+//        switch (tag)   {
+//
+//        case 1:
+//            if let eventDetail = UIStoryboard.eventDetailViewController(){
+//
+//                self.navigationController?.pushViewController(eventDetail, animated: true)
+//            }
+//        default:
+//            if let mainDetail = UIStoryboard.mainDetailViewController(){
+//
+//                self.navigationController?.pushViewController(mainDetail, animated: true)
+//            }
+//        }
+//
+//    }
 
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        switch (segue.identifier)   {
+//        case "announcement":
+//        case "event":
+//            print("prepare for segue to eventDetailViewController")
+//            let vc = segue.destination as! eventDetailViewController
+//        case "main":
+//            let vc
+//        case "testimony":
+//            let vc
+//        default:
+//            print("break")
+//            break
+//        }
 
 
+//        print("this is indexpath.row in will display \(indexPath.section)")
+//        cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
 
-
+//        cell.delegate = self
+//        cell.layoutIfNeeded()
+//        cell.collectionView.tag = indexPath.section
+//        cell.collectionView.reloadData()
 
 
 //    override func viewWillLayoutSubviews() {

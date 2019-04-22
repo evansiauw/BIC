@@ -17,13 +17,13 @@ extension UIButton {
         clipsToBounds = true
     }
     
-    func roundAllCorners(){
+    func roundAllButtonCorners(){
         layer.masksToBounds = false
         layer.cornerRadius = 8
         clipsToBounds = true
     }
     
-    @func roundSomeCorners(corners: UIRectCorner, radius: CGFloat) {
+    func roundSomeButtonCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
