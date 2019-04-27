@@ -6,9 +6,17 @@
 //  Copyright © 2019 Iwan Siauw. All rights reserved.
 //
 
-// TODO: Need to fix delay content touches in TableView
 import UIKit
 import Firebase
+
+enum TableSections: Int {
+
+    case announcements
+    case events
+    case devotionals
+    case testimonies
+    
+}
 
 class ViewController: UIViewController{
     
@@ -18,14 +26,31 @@ class ViewController: UIViewController{
     lazy var screenSize: CGFloat = UIScreen.main.bounds.width
     let tableViewTitle = ["Announcements", "Upcoming Events", "Weekly Devotional", "Testimonies"]
     lazy var tableViewWidth: [CGFloat] = [screenSize/1.1, screenSize/2.2, screenSize/2.5, screenSize/2.5]
-    let tableViewHeight: [CGFloat] = [230,250,150,150]
+    let tableViewHeight: [CGFloat] = [230,280,170,170]
 
     // TableView Models
-//    lazy var modelArray = [announcements, events, devotionals, testimonies]
-    var announcements = [announcement]()
-    var events = [event]()
-    var devotionals = [devotional]()
-    var testimonies = [testimony]()
+    var announcements: [announcement] = [] {
+        didSet {
+            tableView.reloadSections([TableSections.announcements.rawValue], with: .left)
+        }
+    }
+    var events:  [event] = [] {
+        didSet {
+            tableView.reloadSections([TableSections.events.rawValue], with: .left)
+        }
+    }
+    var devotionals: [devotional] = [] {
+        didSet {
+            tableView.reloadSections([TableSections.devotionals.rawValue], with: .left)
+
+        }
+    }
+
+    var testimonies: [testimony] = [] {
+        didSet {
+            tableView.reloadSections([TableSections.testimonies.rawValue], with: .left)
+        }
+    }
     
     lazy var titleImage: UIImageView = {
 
@@ -44,8 +69,6 @@ class ViewController: UIViewController{
         tv.dataSource = self
         tv.estimatedRowHeight = 250
         tv.rowHeight = UITableView.automaticDimension
-//        tv.delaysContentTouches = false
-//        tv.rowHeight = 250
         return tv
     }()
     
@@ -97,14 +120,13 @@ class ViewController: UIViewController{
     }()
     
     override func viewDidLoad(){
-        
         super.viewDidLoad()
-        db = Firestore.firestore()
         
+        db = Firestore.firestore()
+        loadTableView()
         navigationBar()
         mainScreen()
-        loadTableView()
-
+        
     }
     
 
@@ -123,7 +145,7 @@ class ViewController: UIViewController{
         
         // Right Bar Menu Button
         let profileImage = UIImage(named: "profileMenu")
-        let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: nil)
+        let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonClicked))
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
@@ -132,8 +154,8 @@ class ViewController: UIViewController{
     @objc func profileButtonClicked(){
         
         if let profileView = UIStoryboard.profileViewController(){
-            self.navigationController?.pushViewController(profileView, animated: true)
-//            self.present(profileView, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(profileView, animated: true)
+            self.present(profileView, animated: true, completion: nil)
         }
     }
     

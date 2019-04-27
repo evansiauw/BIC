@@ -38,10 +38,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
         return tableViewHeight[indexPath.section]
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("table view cell for row dequeue")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableViewCell
         cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
         return cell
@@ -53,8 +51,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
-        print("collection # of item")
         switch collectionView.tag {
         case 0 :
             return announcements.count
@@ -71,7 +67,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        print("collection cell for item dequeue")
         if collectionView.tag == 0 {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "announcementCollectionViewCell", for: indexPath as IndexPath) as! announcementCollectionViewCell
@@ -103,17 +98,39 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
             cell.layoutIfNeeded()
             return cell
         }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
-
+        
+        switch (collectionView.tag)   {
+            
+        case 1:
+            if let eventDetail = UIStoryboard.eventDetailViewController(){
+                
+                if let timeStamp = events[indexPath.item].eventTime{
+                    let date = Date(timeIntervalSince1970: timeStamp / 1000)
+                
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = NSTimeZone.local
+                    dateFormatter.dateStyle = .long
+                    dateFormatter.timeStyle = .short
+                    eventDetail.dateText = dateFormatter.string(from: date as Date)
+                }
+                
+                eventDetail.titleText = events[indexPath.item].title
+                eventDetail.attendeeText = "\(events[indexPath.item].attendee) people attending"
+                self.navigationController?.pushViewController(eventDetail, animated: true)
+            }
+        default:
+            if let mainDetail = UIStoryboard.mainDetailViewController(){
+                self.navigationController?.pushViewController(mainDetail, animated: true)
+            }
+        }
+        
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        print("collection layout size for item")
         let width = tableViewWidth[collectionView.tag]
         let height = tableViewHeight[collectionView.tag]
         return CGSize(width: width, height: height)

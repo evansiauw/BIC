@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class mainTableViewCell: UITableViewCell {
 
     var collectionView: UICollectionView!

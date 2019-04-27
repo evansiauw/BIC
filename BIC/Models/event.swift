@@ -15,9 +15,7 @@ struct event {
     var image: String
     var description: String
     var address: String
-    
-    // need to be changed to convert to date (fireStamp to Date)
-    var eventTime: String
+    var eventTime: Double?
     
     var dictionary:[String:Any]{
         return [
@@ -40,7 +38,9 @@ extension event: DocumentSeriliazable{
             let image = Dictionary["image"] as? String ?? ""
             let description = Dictionary["description"] as? String ?? ""
             let address = Dictionary["address"] as? String ?? ""
-            let eventTime = Dictionary["eventTime"] as? String ?? ""
+        
+            // Need to display string if date not setup yet or user has to provide date regardless
+            let eventTime = Dictionary["eventTime"] as? Double
 
         self.init(title: title, attendee: attendee, image: image, description: description, address: address, eventTime: eventTime)
         
