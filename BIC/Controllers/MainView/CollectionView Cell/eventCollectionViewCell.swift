@@ -11,11 +11,11 @@ import UIKit
 
 class eventCollectionViewCell: UICollectionViewCell {
     
-    let stackContainerHeight: CGFloat = 110
+    let labelStackContainerHeight: CGFloat = 110
     
     lazy var cellImage: UIImageView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - stackContainerHeight)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - labelStackContainerHeight)
         let image = UIImageView(frame: frame)
         image.image = UIImage(named: "merryChristmas")
         image.contentMode = .scaleAspectFill
@@ -28,7 +28,6 @@ class eventCollectionViewCell: UICollectionViewCell {
 
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 60)
         let label = UILabel(frame: frame)
-//        label.text = "Christmas Eve"
         label.font = UIFont(name: "Rockwell", size: 20)
         label.numberOfLines = 0
 //        label.sizeToFit()
@@ -42,7 +41,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
         let label = UILabel(frame: frame)
-        label.text = "Jan 1st, 2020 at 5pm"
+        label.text = "December 31st, 2019 at 12:00am"
+        label.numberOfLines = 2
         label.textColor = .brown
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -62,10 +62,11 @@ class eventCollectionViewCell: UICollectionViewCell {
     
     lazy var labelStack: UIStackView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: stackContainerHeight)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: labelStackContainerHeight)
         let stack = UIStackView(frame: frame)
         stack.axis = .vertical
-        stack.alignment = .center
+        stack.distribution = .fill
+        stack.spacing = 0
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(dateLabel)
         stack.addArrangedSubview(attendeesLabel)
@@ -78,7 +79,7 @@ class eventCollectionViewCell: UICollectionViewCell {
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         let stack = UIStackView(frame: frame)
         stack.axis = .vertical
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.addArrangedSubview(cellImage)
         stack.addArrangedSubview(labelStack)
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -89,17 +90,26 @@ class eventCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.addSubview(cellStack)
-        
-        NSLayoutConstraint.activate([labelStack.heightAnchor.constraint(equalToConstant: stackContainerHeight)])
+        titleLabel.padding = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         
         NSLayoutConstraint.activate([
-            cellImage.heightAnchor.constraint(equalToConstant: self.frame.height - stackContainerHeight)
+            attendeesLabel.heightAnchor.constraint(equalToConstant: 20),
+            dateLabel.heightAnchor.constraint(equalToConstant: 45),
+//            labelStack.heightAnchor.constraint(equalToConstant: labelStackContainerHeight),
+            
             ])
         
-//        NSLayoutConstraint.activate([
-//            cellStack.leadingAnchor.constraint(equalTo: self.frame.)
-//
-//            ])
+        NSLayoutConstraint.activate([
+            cellImage.heightAnchor.constraint(equalToConstant: 170)
+            ])
+        
+        NSLayoutConstraint.activate([
+            cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
+            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height),
+            cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+
+            ])
         
 
 

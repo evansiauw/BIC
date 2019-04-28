@@ -26,29 +26,29 @@ class ViewController: UIViewController{
     lazy var screenSize: CGFloat = UIScreen.main.bounds.width
     let tableViewTitle = ["Announcements", "Upcoming Events", "Weekly Devotional", "Testimonies"]
     lazy var tableViewWidth: [CGFloat] = [screenSize/1.1, screenSize/2.2, screenSize/2.5, screenSize/2.5]
-    let tableViewHeight: [CGFloat] = [230,280,170,170]
+    let tableViewHeight: [CGFloat] = [230,300,170,170]
 
     // TableView Models
     var announcements: [announcement] = [] {
         didSet {
-            tableView.reloadSections([TableSections.announcements.rawValue], with: .left)
+            tableView.reloadSections([TableSections.announcements.rawValue], with: .fade)
         }
     }
     var events:  [event] = [] {
         didSet {
-            tableView.reloadSections([TableSections.events.rawValue], with: .left)
+            tableView.reloadSections([TableSections.events.rawValue], with: .fade)
         }
     }
     var devotionals: [devotional] = [] {
         didSet {
-            tableView.reloadSections([TableSections.devotionals.rawValue], with: .left)
+            tableView.reloadSections([TableSections.devotionals.rawValue], with: .fade)
 
         }
     }
 
     var testimonies: [testimony] = [] {
         didSet {
-            tableView.reloadSections([TableSections.testimonies.rawValue], with: .left)
+            tableView.reloadSections([TableSections.testimonies.rawValue], with: .fade)
         }
     }
     
