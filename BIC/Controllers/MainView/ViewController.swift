@@ -26,7 +26,7 @@ class ViewController: UIViewController{
     lazy var screenSize: CGFloat = UIScreen.main.bounds.width
     let tableViewTitle = ["Announcements", "Upcoming Events", "Weekly Devotional", "Testimonies"]
     lazy var tableViewWidth: [CGFloat] = [screenSize/1.1, screenSize/2.2, screenSize/2.5, screenSize/2.5]
-    let tableViewHeight: [CGFloat] = [230,300,170,170]
+    let tableViewHeight: [CGFloat] = [230,280,170,170]
 
     // TableView Models
     var announcements: [announcement] = [] {

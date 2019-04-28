@@ -94,7 +94,7 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             attendeesLabel.heightAnchor.constraint(equalToConstant: 20),
-            dateLabel.heightAnchor.constraint(equalToConstant: 45),
+            dateLabel.heightAnchor.constraint(equalToConstant: 20),
 //            labelStack.heightAnchor.constraint(equalToConstant: labelStackContainerHeight),
             
             ])

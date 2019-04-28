@@ -79,6 +79,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCollectionViewCell", for: indexPath as IndexPath) as! eventCollectionViewCell
             cell.titleLabel.text = events[indexPath.item].title
+            cell.attendeesLabel.text = "\(events[indexPath.item].attendee) people going"
+            
+            if let timeStamp = events[indexPath.item].eventTime{
+                let date = Date(timeIntervalSince1970: timeStamp / 1000)
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = NSTimeZone.local
+                dateFormatter.dateStyle = .short
+                dateFormatter.timeStyle = .short
+                cell.dateLabel.text = dateFormatter.string(from: date as Date)
+            }
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             return cell
@@ -119,6 +130,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 
                 eventDetail.titleText = events[indexPath.item].title
                 eventDetail.attendeeText = "\(events[indexPath.item].attendee) people attending"
+                eventDetail.descriptionText = events[indexPath.item].description
+                eventDetail.latitude = events[indexPath.item].latitude
+                eventDetail.longitude = events[indexPath.item].longitude
+                
                 self.navigationController?.pushViewController(eventDetail, animated: true)
             }
         default:
