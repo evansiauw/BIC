@@ -9,6 +9,13 @@
 import UIKit
 import MapKit
 
+/*
+ TODO:
+ - lat and long need optional value not force unwrapping
+ - lat and long not accurately displayed on map and pin
+ 
+ */
+
 class eventDetailViewController: UIViewController, MKMapViewDelegate{
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -17,21 +24,36 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var attendee: UILabel!
     @IBOutlet weak var textView: UITextView!
     
+    lazy var goingButton: UIBarButtonItem = {
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "yes"), for: .normal)
+        let barButton = UIBarButtonItem(customView: button)
+        return barButton
+    }()
+    
+    lazy var notGoingButton: UIBarButtonItem = {
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "no"), for: .normal)
+        let barButton = UIBarButtonItem(customView: button)
+        return barButton
+    }()
+    
     var titleText = ""
     var attendeeText = ""
     var dateText = "To be Announced"
     var descriptionText = ""
-    var latitude = 0.0
-    var longitude = 0.0
+    var latitude: CLLocationDegrees!
+    var longitude: CLLocationDegrees!
     
-    lazy var nycLocation = CLLocation(latitude: latitude, longitude: longitude)
+    lazy var location = CLLocation(latitude: latitude, longitude: longitude)
     let regionRadius: CLLocationDistance = 10000
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(latitude)
-        print(longitude)
+        print(location)
         
         titleLabel.text = titleText
         attendee.text = attendeeText
@@ -46,14 +68,11 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         titleLabel.padding = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         attendee.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
+        navigationItem.rightBarButtonItems = [notGoingButton,goingButton]
+        
         map.delegate = self
-        
-        let london = MKPointAnnotation()
-        london.title = "Ibu Diana"
-        london.coordinate = CLLocationCoordinate2D(latitude: 40.738147, longitude: -73.87494)
-        map.addAnnotation(london)
-        
-        centerMapOnLocation(location: nycLocation)
+        centerMapOnLocation(location: location)
+        addPinToMap()
         
     }
     
@@ -61,6 +80,16 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(coordinateRegion, animated: true)
     }
+    
+    func addPinToMap(){
+        
+        let london = MKPointAnnotation()
+        london.title = "Ibu Diana"
+        london.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        print(london.coordinate)
+        map.addAnnotation(london)
+    }
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
@@ -79,16 +108,16 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
+
         // get the particular pin that was tapped
         let pinToZoomOn = view.annotation
-        
+
         // optionally you can set your own boundaries of the zoom
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        
+
         // or use the current map zoom and just center the map
         // let span = mapView.region.span
-        
+
         // now move the map
         let region = MKCoordinateRegion(center: pinToZoomOn!.coordinate, span: span)
         mapView.setRegion(region, animated: true)

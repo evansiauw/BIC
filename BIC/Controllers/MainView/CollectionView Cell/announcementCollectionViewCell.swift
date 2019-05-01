@@ -28,12 +28,11 @@ class announcementCollectionViewCell: UICollectionViewCell {
     
             let frame = CGRect(x: 0, y: self.frame.height - 40, width: self.frame.width, height: 40)
             let label = UILabel(frame: frame)
-//            label.text = "Hello"
             label.textColor = .white
             label.backgroundColor = .darkGray
             label.textAlignment = .center
-            label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-//            label.font = UIFont(name: "party LET", size: 30)
+            label.font = UIFont(name: "Rockwell", size: 18)
+//            label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
             label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label

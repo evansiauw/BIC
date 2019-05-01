@@ -17,8 +17,9 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - labelStackContainerHeight)
         let image = UIImageView(frame: frame)
-        image.image = UIImage(named: "merryChristmas")
-        image.contentMode = .scaleAspectFill
+        image.image = UIImage(named: "cool")
+        image.contentMode = .scaleAspectFit
+        image.backgroundColor = .lightGray
         image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image

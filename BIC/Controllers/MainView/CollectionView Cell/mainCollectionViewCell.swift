@@ -19,9 +19,9 @@ class mainCollectionViewCell: UICollectionViewCell {
     
     lazy var cellImage: UIImageView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 20)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 30)
         let image = UIImageView(frame: frame)
-        image.image = UIImage(named: "livingHisWord")
+        image.image = UIImage(named: "devotional")
         image.circleProfile()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -31,10 +31,9 @@ class mainCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height)
         let label = UILabel(frame: frame)
-//        label.text = "God is Good"
         label.textColor = .brown
         label.backgroundColor = .white
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

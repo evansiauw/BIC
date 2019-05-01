@@ -31,10 +31,9 @@ class testimonyCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height)
         let label = UILabel(frame: frame)
-//        label.text = "God is Good"
         label.textColor = .brown
         label.backgroundColor = .white
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

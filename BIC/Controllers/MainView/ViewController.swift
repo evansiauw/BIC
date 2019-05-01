@@ -130,7 +130,6 @@ class ViewController: UIViewController{
     }
     
 
-
     // Navigation bar setup on the main screen
     func navigationBar(){
         
