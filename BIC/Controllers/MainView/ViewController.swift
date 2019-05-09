@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
+import InteractiveSideMenu
 
 enum TableSections: Int {
 
@@ -18,7 +20,7 @@ enum TableSections: Int {
     
 }
 
-class ViewController: UIViewController{
+class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboardable{
     
     var db: Firestore!
     
@@ -74,14 +76,24 @@ class ViewController: UIViewController{
     
     lazy var containerFooterView: UIView = {
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 400))
-        view.backgroundColor = UIColor(rgb: 0xf6f6f6)
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width * 3, height: 400))
+        view.backgroundColor = .red
+//        view.backgroundColor = UIColor(rgb: 0xf6f6f6)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var firstFooterButton: UIButton = {
+    lazy var footerViewScrollView: UIScrollView = {
         
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width:view.frame.width * 3, height: containerFooterView.frame.height))
+        scrollView.isScrollEnabled = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    
+    lazy var firstFooterButton: UIButton = {
+
         let button = UIButton(frame: CGRect(x: 20, y: 25, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
         button.backgroundColor = .white
@@ -92,9 +104,9 @@ class ViewController: UIViewController{
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var secondFooterButton: UIButton = {
-        
+
         let button = UIButton(frame: CGRect(x: 20, y: 150, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
         button.backgroundColor = .white
@@ -105,9 +117,9 @@ class ViewController: UIViewController{
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var thirdFooterButton: UIButton = {
-        
+
         let button = UIButton(frame: CGRect(x: 20, y: 275, width: containerFooterView.frame.width - 40, height: 100))
         button.footerImageButton()
         button.backgroundColor = .white
@@ -126,6 +138,25 @@ class ViewController: UIViewController{
         loadTableView()
         navigationBar()
         mainScreen()
+        sideMenuSetup()
+        
+    }
+    
+    func sideMenuSetup() {
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
+        
+        // Instantiate menu view controller by identifier
+        self.menuViewController = UIStoryboard.menuViewController()
+        
+//        // Gather content items controllers
+//        self.contentViewControllers = contentControllers()
+//
+//        // Select initial content controller. It's needed even if the first view controller should be selected.
+//        self.selectContentViewController(contentViewControllers.first!)
+        
+        self.currentItemOptions.cornerRadius = 10.0
         
     }
     
@@ -138,7 +169,7 @@ class ViewController: UIViewController{
         
         // Left Bar Menu Button
         let hamburgerImage = UIImage(named: "hamburgerMenu")
-        let sideMenuButton = UIBarButtonItem(image: hamburgerImage, style: .plain, target: self, action: nil)
+        let sideMenuButton = UIBarButtonItem(image: hamburgerImage, style: .plain, target: self, action: #selector(menuButtonClicked))
         navigationItem.leftBarButtonItem = sideMenuButton
         navigationItem.leftBarButtonItem?.tintColor = .black
         
@@ -147,6 +178,16 @@ class ViewController: UIViewController{
         let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonClicked))
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func menuButtonClicked(){
+        
+        showSideMenu()
+        
+//        if let menuView = UIStoryboard.menuViewController(){
+//            //            self.navigationController?.pushViewController(profileView, animated: true)
+//            self.present(menuView, animated: true, completion: nil)
+//        }
     }
     
     // Present Profile View
@@ -162,13 +203,8 @@ class ViewController: UIViewController{
     func mainScreen(){
     
         view.addSubview(tableView)
-        tableView.tableFooterView = containerFooterView
-        containerFooterView.addSubview(firstFooterButton)
-        containerFooterView.addSubview(secondFooterButton)
-        containerFooterView.addSubview(thirdFooterButton)
-        
+//        tableView.tableFooterView = footerViewScrollView
     }
-    
     
     func loadTableView() {
 
@@ -198,6 +234,29 @@ class ViewController: UIViewController{
             }
         }
 
+    }
+    
+    private func contentControllers() -> [UIViewController] {
+        
+        let mainController = UIStoryboard.mainDetailViewController()
+        //        let tabController = TabBarViewController.storyboardNavigationController()
+        //        let tweakController = TweakViewController.storyboardNavigationController()
+        
+        return [mainController!]
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // Options to customize menu transition animation.
+        var options = TransitionOptions()
+        
+        // Animation duration
+        options.duration = size.width < size.height ? 0.4 : 0.6
+        
+        // Part of item content remaining visible on right when menu is shown
+        options.visibleContentWidth = size.width / 6
+        self.transitionOptions = options
     }
     
     

@@ -40,6 +40,10 @@
 		01713A22226E80890008013E /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A21226E80890008013E /* profileViewController.swift */; };
 		01713A24226E80BB0008013E /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* profile.storyboard */; };
 		019B15B422753A6700FAD491 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15B322753A6700FAD491 /* UITextView.swift */; };
+		019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BB2283419500FAD491 /* menuTableViewController.swift */; };
+		019B15BE2283427900FAD491 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15BD2283427900FAD491 /* menu.storyboard */; };
+		019B15C02283433700FAD491 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BF2283433700FAD491 /* Storyboardable.swift */; };
+		019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15C12283500700FAD491 /* menuTableViewCell.swift */; };
 		3B22878334575D3C50FC23D5 /* Pods_BICUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */; };
 		56BF3ED7F4FBFE49B50C1545 /* Pods_BIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */; };
 		C4FB9D4B5FB83044BD4FA38D /* Pods_BICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B49490EACBEBFA1D0ABFE87 /* Pods_BICTests.framework */; };
@@ -102,6 +106,10 @@
 		01713A21226E80890008013E /* profileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		01713A23226E80BB0008013E /* profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
 		019B15B322753A6700FAD491 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		019B15BB2283419500FAD491 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
+		019B15BD2283427900FAD491 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
+		019B15BF2283433700FAD491 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		019B15C12283500700FAD491 /* menuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewCell.swift; sourceTree = "<group>"; };
 		17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BICUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BF31E7184A723230837E6E /* Pods-BIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIC/Pods-BIC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 		013345B2224974B5006F96F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				019B15B622824A7300FAD491 /* SideMenu */,
 				01713A20226E7F5E0008013E /* Profile */,
 				01713A13226907720008013E /* mainDetailView */,
 				01713A0E2268EAA00008013E /* eventDetailView */,
@@ -257,6 +266,7 @@
 				013935422262D9E600E32ECB /* UILabel.swift */,
 				013935492267D2F800E32ECB /* UIView.swift */,
 				019B15B322753A6700FAD491 /* UITextView.swift */,
+				019B15BF2283433700FAD491 /* Storyboardable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +324,24 @@
 				01713A21226E80890008013E /* profileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		019B15B622824A7300FAD491 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				019B15BD2283427900FAD491 /* menu.storyboard */,
+				019B15BB2283419500FAD491 /* menuTableViewController.swift */,
+				019B15C12283500700FAD491 /* menuTableViewCell.swift */,
+				019B15C32283A40D00FAD491 /* menuCollectionController */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		019B15C32283A40D00FAD491 /* menuCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = menuCollectionController;
 			sourceTree = "<group>";
 		};
 		C6EC3F9830447A1C36999B2A /* Frameworks */ = {
@@ -450,6 +478,7 @@
 				01713A24226E80BB0008013E /* profile.storyboard in Resources */,
 				0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */,
 				01713A12226901DD0008013E /* event.storyboard in Resources */,
+				019B15BE2283427900FAD491 /* menu.storyboard in Resources */,
 				01713A15226907C40008013E /* mainDetail.storyboard in Resources */,
 				013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */,
 				0133458922497321006F96F0 /* Assets.xcassets in Resources */,
@@ -502,6 +531,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -513,6 +543,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -581,8 +612,10 @@
 				01713A1D226B5FA00008013E /* testimony.swift in Sources */,
 				013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */,
 				01713A1F226B601D0008013E /* event.swift in Sources */,
+				019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */,
 				01713A0D2268E80A0008013E /* testimonyCollectionViewCell.swift in Sources */,
 				013345C4224BF88E006F96F0 /* mainTableViewCell.swift in Sources */,
+				019B15C02283433700FAD491 /* Storyboardable.swift in Sources */,
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
 				013345C8224C4F04006F96F0 /* UIButton.swift in Sources */,
@@ -591,6 +624,7 @@
 				013935472267BE9000E32ECB /* eventCollectionViewCell.swift in Sources */,
 				013345C1224AF95C006F96F0 /* ViewController+TableView.swift in Sources */,
 				013935412262C62000E32ECB /* announcementCollectionViewCell.swift in Sources */,
+				019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

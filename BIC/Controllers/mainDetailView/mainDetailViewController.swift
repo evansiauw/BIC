@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import InteractiveSideMenu
 
-class mainDetailViewController: UIViewController {
+class mainDetailViewController: UIViewController, SideMenuItemContent, Storyboardable{
 
     override func viewDidLoad() {
         super.viewDidLoad()

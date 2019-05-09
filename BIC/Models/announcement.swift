@@ -19,16 +19,16 @@ struct announcement {
     
     // need to be changed to convert to date (fireStamp to Date)
     var time: String
-    var image: String
+    var image: String?
     
-    var dictionary:[String:Any]{
-        return [
-            "title": title,
-            "description": description,
-            "time": time,
-            "image": image
-        ]
-    }
+//    var dictionary:[String:Any]{
+//        return [
+//            "title": title,
+//            "description": description,
+//            "time": time,
+//            "image": image
+//        ]
+//    }
     
 }
 
@@ -38,7 +38,7 @@ extension announcement: DocumentSeriliazable{
         let title = Dictionary["title"] as? String ?? ""
         let description = Dictionary["description"] as? String ?? ""
         let time = Dictionary["time"] as? String ?? ""
-        let image = Dictionary["image"] as? String ?? ""
+        let image = Dictionary["image"] as? String
         
         self.init(title: title, description: description, time: time, image: image)
         

@@ -14,11 +14,14 @@ import UIKit
  */
 class announcementCollectionViewCell: UICollectionViewCell {
     
+    let padding: CGFloat = 5
+    
         lazy var cellImage: UIImageView = {
     
-            let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 40)
+            let frame = CGRect(x: 0, y: padding, width: self.frame.width, height: self.frame.height - 40)
             let image = UIImageView(frame: frame)
-            image.image = UIImage(named: "profileWallpaper")
+            image.image = UIImage(named: "noImage")
+            image.contentMode = .scaleAspectFill
             image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
             image.translatesAutoresizingMaskIntoConstraints = false
             return image
@@ -26,7 +29,7 @@ class announcementCollectionViewCell: UICollectionViewCell {
     
         lazy var titleLabel: UILabel = {
     
-            let frame = CGRect(x: 0, y: self.frame.height - 40, width: self.frame.width, height: 40)
+            let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height - padding)
             let label = UILabel(frame: frame)
             label.textColor = .white
             label.backgroundColor = .darkGray

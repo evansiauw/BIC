@@ -12,6 +12,7 @@ import UIKit
 class eventCollectionViewCell: UICollectionViewCell {
     
     let labelStackContainerHeight: CGFloat = 110
+    let padding: CGFloat = 5
     
     lazy var cellImage: UIImageView = {
         
@@ -77,7 +78,7 @@ class eventCollectionViewCell: UICollectionViewCell {
     
     lazy var cellStack: UIStackView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        let frame = CGRect(x: 0, y: padding, width: self.frame.width, height: self.frame.height - padding)
         let stack = UIStackView(frame: frame)
         stack.axis = .vertical
         stack.distribution = .fill

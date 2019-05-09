@@ -17,23 +17,28 @@ import UIKit
  
 class testimonyCollectionViewCell: UICollectionViewCell {
     
+    let padding: CGFloat = 5
+    
     lazy var cellImage: UIImageView = {
         
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 20)
+        let frame = CGRect(x: 0, y: padding, width: self.frame.width, height: self.frame.height - 35)
         let image = UIImageView(frame: frame)
-        image.image = UIImage(named: "powerOfTestimony")
-        image.circleProfile()
+        image.image = UIImage(named: "noImage")
+        image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
+        image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     lazy var titleLabel: UILabel = {
         
-        let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height)
+        let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height - padding)
         let label = UILabel(frame: frame)
-        label.textColor = .brown
-        label.backgroundColor = .white
+        label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
+        label.textColor = .white
+        label.backgroundColor = .darkGray
         label.textAlignment = .center
+        label.font = UIFont(name: "Rockwell", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

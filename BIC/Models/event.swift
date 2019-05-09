@@ -12,7 +12,7 @@ struct event {
     
     var title: String
     var attendee: Int
-    var image: String
+    var image: String?
     var description: String
     var address: String
     var eventTime: Double?
@@ -39,7 +39,7 @@ extension event: DocumentSeriliazable{
     init?(Dictionary:[String:Any]){
             let title = Dictionary["title"] as? String ?? ""
             let attendee = Dictionary["attendee"] as? Int ?? 0
-            let image = Dictionary["image"] as? String ?? ""
+            let image = Dictionary["image"] as? String
             let description = Dictionary["description"] as? String ?? "No Description"
             let address = Dictionary["address"] as? String ?? ""
             let latitude = Dictionary["latitude"] as? Double ?? 40.745233

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -71,6 +72,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "announcementCollectionViewCell", for: indexPath as IndexPath) as! announcementCollectionViewCell
             cell.titleLabel.text = announcements[indexPath.item].title
+            
+            if let imageRef = announcements[indexPath.item].image {
+
+                let httpRef = Storage.storage().reference(forURL: imageRef)
+
+                httpRef.getData(maxSize: 1 * 1024 * 1024, completion: { data, error in
+                    if let error = error {
+                        print(error)
+                    } else {
+
+                        DispatchQueue.main.async {
+                            cell.cellImage.image = UIImage(data: data!)
+                        }
+                    }
+                })
+            }
+            
+            
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             return cell
@@ -101,6 +120,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             return cell
+            
         } else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "testimonyCollectionViewCell", for: indexPath as IndexPath) as! testimonyCollectionViewCell

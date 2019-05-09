@@ -69,6 +69,7 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         attendee.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         navigationItem.rightBarButtonItems = [notGoingButton,goingButton]
+
         
         map.delegate = self
         centerMapOnLocation(location: location)
@@ -85,7 +86,7 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         
         let london = MKPointAnnotation()
         london.title = "Ibu Diana"
-        london.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        london.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
         print(london.coordinate)
         map.addAnnotation(london)
     }
