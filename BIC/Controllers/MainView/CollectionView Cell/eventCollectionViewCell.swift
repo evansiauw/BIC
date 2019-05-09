@@ -106,8 +106,9 @@ class eventCollectionViewCell: UICollectionViewCell {
             ])
         
         NSLayoutConstraint.activate([
+            
             cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
-            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height),
+            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10 ),
             cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
 

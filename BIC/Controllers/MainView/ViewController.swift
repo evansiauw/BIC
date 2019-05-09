@@ -76,7 +76,7 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
     
     lazy var containerFooterView: UIView = {
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width * 3, height: 400))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width * 3, height: 100))
         view.backgroundColor = .red
 //        view.backgroundColor = UIColor(rgb: 0xf6f6f6)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -142,6 +142,21 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    } 
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("view appear")
+//        tableView.reloadData()
+//    }
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        print("view will appear")
+//        tableView.reloadData()
+//    }
+
+    
     func sideMenuSetup() {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -149,13 +164,6 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
         
         // Instantiate menu view controller by identifier
         self.menuViewController = UIStoryboard.menuViewController()
-        
-//        // Gather content items controllers
-//        self.contentViewControllers = contentControllers()
-//
-//        // Select initial content controller. It's needed even if the first view controller should be selected.
-//        self.selectContentViewController(contentViewControllers.first!)
-        
         self.currentItemOptions.cornerRadius = 10.0
         
     }
@@ -174,8 +182,8 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
         navigationItem.leftBarButtonItem?.tintColor = .black
         
         // Right Bar Menu Button
-        let profileImage = UIImage(named: "profileMenu")
-        let profileMenuButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonClicked))
+        let infoImage = UIImage(named: "about")
+        let profileMenuButton = UIBarButtonItem(image: infoImage, style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
     }

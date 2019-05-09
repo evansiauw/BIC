@@ -20,7 +20,7 @@ class mainCollectionViewCell: UICollectionViewCell {
     
     lazy var cellImage: UIImageView = {
         
-        let frame = CGRect(x: 0, y: padding, width: self.frame.width, height: self.frame.height - 35)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 35)
         let image = UIImageView(frame: frame)
         image.image = UIImage(named: "devotional")
         image.contentMode = .scaleAspectFill
@@ -31,7 +31,7 @@ class mainCollectionViewCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         
-        let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: self.frame.height - cellImage.frame.height - padding)
+        let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: 25)
         let label = UILabel(frame: frame)
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
         label.textColor = .white
@@ -42,13 +42,35 @@ class mainCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    lazy var cellStack: UIStackView = {
+        
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        let stack = UIStackView(frame: frame)
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.addArrangedSubview(cellImage)
+        stack.addArrangedSubview(titleLabel)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(cellImage)
-        self.addSubview(titleLabel)
+        self.addSubview(cellStack)
         
+        NSLayoutConstraint.activate([
+            titleLabel.heightAnchor.constraint(equalToConstant: 25)
+            ])
         
+        NSLayoutConstraint.activate([
+            
+            cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
+            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10),
+            cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+            
+            ])
     }
     
     
