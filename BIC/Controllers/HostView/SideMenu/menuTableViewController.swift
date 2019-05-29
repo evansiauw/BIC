@@ -92,15 +92,13 @@ extension menuTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                
+        
         guard let menuContainerViewController = self.menuContainerViewController else {
             return
         }
         
         menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[indexPath.row])
-        print("get here")
         menuContainerViewController.hideSideMenu()
-        print("success hidding the side menu")
 
         
     }

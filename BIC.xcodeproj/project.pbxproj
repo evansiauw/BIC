@@ -23,6 +23,8 @@
 		013345C8224C4F04006F96F0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C7224C4F04006F96F0 /* UIButton.swift */; };
 		013345CA224C53F3006F96F0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345C9224C53F3006F96F0 /* UIColor.swift */; };
 		013345CF22511307006F96F0 /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013345CE22511307006F96F0 /* mainCollectionViewCell.swift */; };
+		01349A85228790E10075544C /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349A84228790E10075544C /* HostViewController.swift */; };
+		01349A87228792490075544C /* host.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349A86228792490075544C /* host.storyboard */; };
 		013935412262C62000E32ECB /* announcementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935402262C62000E32ECB /* announcementCollectionViewCell.swift */; };
 		013935432262D9E600E32ECB /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935422262D9E600E32ECB /* UILabel.swift */; };
 		013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013935442263ABAB00E32ECB /* GoogleService-Info.plist */; };
@@ -44,6 +46,14 @@
 		019B15BE2283427900FAD491 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15BD2283427900FAD491 /* menu.storyboard */; };
 		019B15C02283433700FAD491 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BF2283433700FAD491 /* Storyboardable.swift */; };
 		019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15C12283500700FAD491 /* menuTableViewCell.swift */; };
+		019B15CB2284DA4200FAD491 /* setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15CA2284DA4200FAD491 /* setting.storyboard */; };
+		019B15CD2284DA5B00FAD491 /* donation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15CC2284DA5B00FAD491 /* donation.storyboard */; };
+		019B15D12284DA8000FAD491 /* schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15D02284DA8000FAD491 /* schedule.storyboard */; };
+		019B15D32284DAB300FAD491 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D22284DAB300FAD491 /* settingViewController.swift */; };
+		019B15D52284DAC800FAD491 /* donationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D42284DAC800FAD491 /* donationViewController.swift */; };
+		019B15D72284DAD700FAD491 /* prayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D62284DAD700FAD491 /* prayerViewController.swift */; };
+		019B15D92284DAE800FAD491 /* scheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D82284DAE800FAD491 /* scheduleViewController.swift */; };
+		019B15DB2284DDD100FAD491 /* prayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15DA2284DDD100FAD491 /* prayer.storyboard */; };
 		3B22878334575D3C50FC23D5 /* Pods_BICUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */; };
 		56BF3ED7F4FBFE49B50C1545 /* Pods_BIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */; };
 		C4FB9D4B5FB83044BD4FA38D /* Pods_BICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B49490EACBEBFA1D0ABFE87 /* Pods_BICTests.framework */; };
@@ -89,6 +99,8 @@
 		013345C7224C4F04006F96F0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = BIC/Helper/Extensions/UIButton.swift; sourceTree = SOURCE_ROOT; };
 		013345C9224C53F3006F96F0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = BIC/Helper/Extensions/UIColor.swift; sourceTree = SOURCE_ROOT; };
 		013345CE22511307006F96F0 /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
+		01349A84228790E10075544C /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		01349A86228792490075544C /* host.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = host.storyboard; sourceTree = "<group>"; };
 		013935402262C62000E32ECB /* announcementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementCollectionViewCell.swift; sourceTree = "<group>"; };
 		013935422262D9E600E32ECB /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabel.swift; path = BIC/Helper/Extensions/UILabel.swift; sourceTree = SOURCE_ROOT; };
 		013935442263ABAB00E32ECB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -110,6 +122,14 @@
 		019B15BD2283427900FAD491 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
 		019B15BF2283433700FAD491 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		019B15C12283500700FAD491 /* menuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewCell.swift; sourceTree = "<group>"; };
+		019B15CA2284DA4200FAD491 /* setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = setting.storyboard; sourceTree = "<group>"; };
+		019B15CC2284DA5B00FAD491 /* donation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = donation.storyboard; sourceTree = "<group>"; };
+		019B15D02284DA8000FAD491 /* schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = schedule.storyboard; sourceTree = "<group>"; };
+		019B15D22284DAB300FAD491 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		019B15D42284DAC800FAD491 /* donationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donationViewController.swift; sourceTree = "<group>"; };
+		019B15D62284DAD700FAD491 /* prayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prayerViewController.swift; sourceTree = "<group>"; };
+		019B15D82284DAE800FAD491 /* scheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleViewController.swift; sourceTree = "<group>"; };
+		019B15DA2284DDD100FAD491 /* prayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = prayer.storyboard; sourceTree = "<group>"; };
 		17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BICUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BF31E7184A723230837E6E /* Pods-BIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIC/Pods-BIC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,25 +255,20 @@
 		013345B2224974B5006F96F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				019B15B622824A7300FAD491 /* SideMenu */,
-				01713A20226E7F5E0008013E /* Profile */,
-				01713A13226907720008013E /* mainDetailView */,
-				01713A0E2268EAA00008013E /* eventDetailView */,
-				013345B322497C7F006F96F0 /* MainView */,
+				013345B322497C7F006F96F0 /* HostView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		013345B322497C7F006F96F0 /* MainView */ = {
+		013345B322497C7F006F96F0 /* HostView */ = {
 			isa = PBXGroup;
 			children = (
 				013345822249731F006F96F0 /* Main.storyboard */,
-				013345802249731F006F96F0 /* ViewController.swift */,
-				013345C2224BF846006F96F0 /* TableView Cell */,
-				013935482267BF1700E32ECB /* CollectionView Cell */,
-				013345CB224EFABB006F96F0 /* Extensions */,
+				01349A84228790E10075544C /* HostViewController.swift */,
+				019B15B622824A7300FAD491 /* SideMenu */,
+				01713A20226E7F5E0008013E /* Profile */,
 			);
-			path = MainView;
+			path = HostView;
 			sourceTree = "<group>";
 		};
 		013345B422497CF5006F96F0 /* Extensions */ = {
@@ -326,6 +341,20 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		01804ABD229E16980084A48F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				01349A86228792490075544C /* host.storyboard */,
+				013345802249731F006F96F0 /* ViewController.swift */,
+				013345C2224BF846006F96F0 /* TableView Cell */,
+				013935482267BF1700E32ECB /* CollectionView Cell */,
+				013345CB224EFABB006F96F0 /* Extensions */,
+				01713A13226907720008013E /* mainDetailView */,
+				01713A0E2268EAA00008013E /* eventDetailView */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		019B15B622824A7300FAD491 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,8 +369,49 @@
 		019B15C32283A40D00FAD491 /* menuCollectionController */ = {
 			isa = PBXGroup;
 			children = (
+				01804ABD229E16980084A48F /* Main */,
+				019B15C62284B21700FAD491 /* Schedule */,
+				019B15C72284B22300FAD491 /* Prayer */,
+				019B15C82284B23800FAD491 /* Donation */,
+				019B15C92284B23E00FAD491 /* Setting */,
 			);
 			path = menuCollectionController;
+			sourceTree = "<group>";
+		};
+		019B15C62284B21700FAD491 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				019B15D02284DA8000FAD491 /* schedule.storyboard */,
+				019B15D82284DAE800FAD491 /* scheduleViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		019B15C72284B22300FAD491 /* Prayer */ = {
+			isa = PBXGroup;
+			children = (
+				019B15DA2284DDD100FAD491 /* prayer.storyboard */,
+				019B15D62284DAD700FAD491 /* prayerViewController.swift */,
+			);
+			path = Prayer;
+			sourceTree = "<group>";
+		};
+		019B15C82284B23800FAD491 /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				019B15CC2284DA5B00FAD491 /* donation.storyboard */,
+				019B15D42284DAC800FAD491 /* donationViewController.swift */,
+			);
+			path = Donation;
+			sourceTree = "<group>";
+		};
+		019B15C92284B23E00FAD491 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				019B15CA2284DA4200FAD491 /* setting.storyboard */,
+				019B15D22284DAB300FAD491 /* settingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		C6EC3F9830447A1C36999B2A /* Frameworks */ = {
@@ -475,8 +545,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019B15CD2284DA5B00FAD491 /* donation.storyboard in Resources */,
 				01713A24226E80BB0008013E /* profile.storyboard in Resources */,
 				0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */,
+				01349A87228792490075544C /* host.storyboard in Resources */,
+				019B15DB2284DDD100FAD491 /* prayer.storyboard in Resources */,
+				019B15D12284DA8000FAD491 /* schedule.storyboard in Resources */,
+				019B15CB2284DA4200FAD491 /* setting.storyboard in Resources */,
 				01713A12226901DD0008013E /* event.storyboard in Resources */,
 				019B15BE2283427900FAD491 /* menu.storyboard in Resources */,
 				01713A15226907C40008013E /* mainDetail.storyboard in Resources */,
@@ -603,6 +678,7 @@
 				0139354A2267D2F800E32ECB /* UIView.swift in Sources */,
 				013345BD224A77F9006F96F0 /* UIStoryboard.swift in Sources */,
 				013345CA224C53F3006F96F0 /* UIColor.swift in Sources */,
+				019B15D52284DAC800FAD491 /* donationViewController.swift in Sources */,
 				01713A1B226B5F0C0008013E /* devotional.swift in Sources */,
 				01713A19226B5D260008013E /* announcement.swift in Sources */,
 				013935432262D9E600E32ECB /* UILabel.swift in Sources */,
@@ -613,10 +689,14 @@
 				013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */,
 				01713A1F226B601D0008013E /* event.swift in Sources */,
 				019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */,
+				01349A85228790E10075544C /* HostViewController.swift in Sources */,
 				01713A0D2268E80A0008013E /* testimonyCollectionViewCell.swift in Sources */,
+				019B15D72284DAD700FAD491 /* prayerViewController.swift in Sources */,
+				019B15D92284DAE800FAD491 /* scheduleViewController.swift in Sources */,
 				013345C4224BF88E006F96F0 /* mainTableViewCell.swift in Sources */,
 				019B15C02283433700FAD491 /* Storyboardable.swift in Sources */,
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
+				019B15D32284DAB300FAD491 /* settingViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
 				013345C8224C4F04006F96F0 /* UIButton.swift in Sources */,
 				01713A22226E80890008013E /* profileViewController.swift in Sources */,

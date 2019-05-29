@@ -132,28 +132,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
         switch (collectionView.tag)   {
-            
+
         case 1:
             if let eventDetail = UIStoryboard.eventDetailViewController(){
-                
+
                 if let timeStamp = events[indexPath.item].eventTime{
                     let date = Date(timeIntervalSince1970: timeStamp / 1000)
-                
+
                     let dateFormatter = DateFormatter()
                     dateFormatter.timeZone = NSTimeZone.local
                     dateFormatter.dateStyle = .long
                     dateFormatter.timeStyle = .short
                     eventDetail.dateText = dateFormatter.string(from: date as Date)
                 }
-                
+
                 eventDetail.titleText = events[indexPath.item].title
                 eventDetail.attendeeText = "\(events[indexPath.item].attendee) people attending"
                 eventDetail.descriptionText = events[indexPath.item].description
                 eventDetail.latitude = events[indexPath.item].latitude
                 eventDetail.longitude = events[indexPath.item].longitude
-                
+
                 self.navigationController?.pushViewController(eventDetail, animated: true)
             }
         default:
@@ -161,7 +161,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 self.navigationController?.pushViewController(mainDetail, animated: true)
             }
         }
-        
+
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

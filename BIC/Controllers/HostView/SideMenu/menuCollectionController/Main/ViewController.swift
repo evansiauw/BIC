@@ -20,7 +20,7 @@ enum TableSections: Int {
     
 }
 
-class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboardable{
+class ViewController: MenuContainerViewController, SideMenuItemContent{
     
     var db: Firestore!
     
@@ -134,17 +134,19 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        print("view controller run")
+        
         db = Firestore.firestore()
         loadTableView()
-        navigationBar()
         mainScreen()
         sideMenuSetup()
-        
+//        self.contentViewControllers = contentControllers()
+
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    } 
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .default
+//    }
     
 //    override func viewDidAppear(_ animated: Bool) {
 //        print("view appear")
@@ -156,7 +158,6 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
 //        tableView.reloadData()
 //    }
 
-    
     func sideMenuSetup() {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -166,45 +167,6 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
         self.menuViewController = UIStoryboard.menuViewController()
         self.currentItemOptions.cornerRadius = 10.0
         
-    }
-    
-
-    // Navigation bar setup on the main screen
-    func navigationBar(){
-        
-        // Navigation Item
-        navigationItem.titleView = titleImage
-        
-        // Left Bar Menu Button
-        let hamburgerImage = UIImage(named: "hamburgerMenu")
-        let sideMenuButton = UIBarButtonItem(image: hamburgerImage, style: .plain, target: self, action: #selector(menuButtonClicked))
-        navigationItem.leftBarButtonItem = sideMenuButton
-        navigationItem.leftBarButtonItem?.tintColor = .black
-        
-        // Right Bar Menu Button
-        let infoImage = UIImage(named: "about")
-        let profileMenuButton = UIBarButtonItem(image: infoImage, style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem = profileMenuButton
-        navigationItem.rightBarButtonItem?.tintColor = .black
-    }
-    
-    @objc func menuButtonClicked(){
-        
-        showSideMenu()
-        
-//        if let menuView = UIStoryboard.menuViewController(){
-//            //            self.navigationController?.pushViewController(profileView, animated: true)
-//            self.present(menuView, animated: true, completion: nil)
-//        }
-    }
-    
-    // Present Profile View
-    @objc func profileButtonClicked(){
-        
-        if let profileView = UIStoryboard.profileViewController(){
-//            self.navigationController?.pushViewController(profileView, animated: true)
-            self.present(profileView, animated: true, completion: nil)
-        }
     }
     
     // Main Screen setup
@@ -246,26 +208,29 @@ class ViewController: MenuContainerViewController, SideMenuItemContent, Storyboa
     
     private func contentControllers() -> [UIViewController] {
         
-        let mainController = UIStoryboard.mainDetailViewController()
-        //        let tabController = TabBarViewController.storyboardNavigationController()
-        //        let tweakController = TweakViewController.storyboardNavigationController()
+        let mainController = UIStoryboard.storyboardNavigationController("host")
+        let scheduleController = UIStoryboard.storyboardNavigationController("schedule")
+        let prayerController = UIStoryboard.storyboardNavigationController("prayer")
+        let donationController = UIStoryboard.storyboardNavigationController("donation")
+        let settingController = UIStoryboard.storyboardNavigationController("setting")
         
-        return [mainController!]
+        return [mainController, scheduleController, prayerController, donationController, settingController, settingController]
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        // Options to customize menu transition animation.
-        var options = TransitionOptions()
-        
-        // Animation duration
-        options.duration = size.width < size.height ? 0.4 : 0.6
-        
-        // Part of item content remaining visible on right when menu is shown
-        options.visibleContentWidth = size.width / 6
-        self.transitionOptions = options
-    }
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        
+//        // Options to customize menu transition animation.
+//        var options = TransitionOptions()
+//        
+//        // Animation duration
+//        options.duration = size.width < size.height ? 0.4 : 0.6
+//        
+//        // Part of item content remaining visible on right when menu is shown
+//        options.visibleContentWidth = size.width / 6
+//        self.transitionOptions = options
+//    }
     
     
 
