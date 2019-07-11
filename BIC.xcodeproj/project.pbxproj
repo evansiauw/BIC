@@ -39,8 +39,9 @@
 		01713A1B226B5F0C0008013E /* devotional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A1A226B5F0C0008013E /* devotional.swift */; };
 		01713A1D226B5FA00008013E /* testimony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A1C226B5FA00008013E /* testimony.swift */; };
 		01713A1F226B601D0008013E /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A1E226B601D0008013E /* event.swift */; };
-		01713A22226E80890008013E /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A21226E80890008013E /* profileViewController.swift */; };
-		01713A24226E80BB0008013E /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* profile.storyboard */; };
+		01713A22226E80890008013E /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A21226E80890008013E /* infoViewController.swift */; };
+		01713A24226E80BB0008013E /* info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* info.storyboard */; };
+		018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */; };
 		019B15B422753A6700FAD491 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15B322753A6700FAD491 /* UITextView.swift */; };
 		019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BB2283419500FAD491 /* menuTableViewController.swift */; };
 		019B15BE2283427900FAD491 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15BD2283427900FAD491 /* menu.storyboard */; };
@@ -115,8 +116,9 @@
 		01713A1A226B5F0C0008013E /* devotional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devotional.swift; sourceTree = "<group>"; };
 		01713A1C226B5FA00008013E /* testimony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testimony.swift; sourceTree = "<group>"; };
 		01713A1E226B601D0008013E /* event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
-		01713A21226E80890008013E /* profileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
-		01713A23226E80BB0008013E /* profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
+		01713A21226E80890008013E /* infoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
+		01713A23226E80BB0008013E /* info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = info.storyboard; sourceTree = "<group>"; };
+		018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
 		019B15B322753A6700FAD491 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		019B15BB2283419500FAD491 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
 		019B15BD2283427900FAD491 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
@@ -266,7 +268,7 @@
 				013345822249731F006F96F0 /* Main.storyboard */,
 				01349A84228790E10075544C /* HostViewController.swift */,
 				019B15B622824A7300FAD491 /* SideMenu */,
-				01713A20226E7F5E0008013E /* Profile */,
+				01713A20226E7F5E0008013E /* Info */,
 			);
 			path = HostView;
 			sourceTree = "<group>";
@@ -332,13 +334,13 @@
 			path = mainDetailView;
 			sourceTree = "<group>";
 		};
-		01713A20226E7F5E0008013E /* Profile */ = {
+		01713A20226E7F5E0008013E /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				01713A23226E80BB0008013E /* profile.storyboard */,
-				01713A21226E80890008013E /* profileViewController.swift */,
+				01713A23226E80BB0008013E /* info.storyboard */,
+				01713A21226E80890008013E /* infoViewController.swift */,
 			);
-			path = Profile;
+			path = Info;
 			sourceTree = "<group>";
 		};
 		01804ABD229E16980084A48F /* Main */ = {
@@ -410,6 +412,7 @@
 			children = (
 				019B15CA2284DA4200FAD491 /* setting.storyboard */,
 				019B15D22284DAB300FAD491 /* settingViewController.swift */,
+				018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -546,7 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019B15CD2284DA5B00FAD491 /* donation.storyboard in Resources */,
-				01713A24226E80BB0008013E /* profile.storyboard in Resources */,
+				01713A24226E80BB0008013E /* info.storyboard in Resources */,
 				0133458C22497321006F96F0 /* LaunchScreen.storyboard in Resources */,
 				01349A87228792490075544C /* host.storyboard in Resources */,
 				019B15DB2284DDD100FAD491 /* prayer.storyboard in Resources */,
@@ -687,6 +690,7 @@
 				013345872249731F006F96F0 /* BIC.xcdatamodeld in Sources */,
 				01713A1D226B5FA00008013E /* testimony.swift in Sources */,
 				013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */,
+				018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */,
 				01713A1F226B601D0008013E /* event.swift in Sources */,
 				019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */,
 				01349A85228790E10075544C /* HostViewController.swift in Sources */,
@@ -699,7 +703,7 @@
 				019B15D32284DAB300FAD491 /* settingViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
 				013345C8224C4F04006F96F0 /* UIButton.swift in Sources */,
-				01713A22226E80890008013E /* profileViewController.swift in Sources */,
+				01713A22226E80890008013E /* infoViewController.swift in Sources */,
 				01713A172269080D0008013E /* mainDetailViewController.swift in Sources */,
 				013935472267BE9000E32ECB /* eventCollectionViewCell.swift in Sources */,
 				013345C1224AF95C006F96F0 /* ViewController+TableView.swift in Sources */,

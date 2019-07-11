@@ -33,7 +33,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "Rockwell", size: 20)
         label.numberOfLines = 0
 //        label.sizeToFit()
-        label.textColor = .brown
+        label.textColor = .white
+        label.backgroundColor = .darkGray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,7 +46,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         let label = UILabel(frame: frame)
         label.text = "December 31st, 2019 at 12:00am"
         label.numberOfLines = 2
-        label.textColor = .brown
+        label.backgroundColor = .darkGray
+        label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -56,8 +58,11 @@ class eventCollectionViewCell: UICollectionViewCell {
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
         let label = UILabel(frame: frame)
         label.text = "0 people going"
-        label.textColor = .brown
+        label.textColor = .white
+        label.backgroundColor = .darkGray
         label.textAlignment = .center
+        label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
+        label.padding = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -92,6 +97,7 @@ class eventCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.addSubview(cellStack)
+        
         titleLabel.padding = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         
         NSLayoutConstraint.activate([
@@ -108,7 +114,7 @@ class eventCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             
             cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
-            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10 ),
+            cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10),
             cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
 

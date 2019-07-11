@@ -132,9 +132,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         switch (collectionView.tag)   {
+            
+        case 0:
+            if let announcementDetail = UIStoryboard.mainDetailViewController(){
 
+                let cell = collectionView.cellForItem(at: indexPath) as! announcementCollectionViewCell
+                announcementDetail.image = cell.cellImage.image
+                announcementDetail.text = announcements[indexPath.item].description
+                self.navigationController?.pushViewController(announcementDetail, animated: true)
+            }
         case 1:
             if let eventDetail = UIStoryboard.eventDetailViewController(){
 
@@ -156,6 +164,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
 
                 self.navigationController?.pushViewController(eventDetail, animated: true)
             }
+            
+        case 2:
+            if let mainDetail = UIStoryboard.mainDetailViewController(){
+
+                let cell = collectionView.cellForItem(at: indexPath) as! mainCollectionViewCell
+                mainDetail.image = cell.cellImage.image
+                mainDetail.text = devotionals[indexPath.item].description
+                self.navigationController?.pushViewController(mainDetail, animated: true)
+            }
+            
+        case 3:
+            if let testimonyDetail = UIStoryboard.mainDetailViewController(){
+                
+                let cell = collectionView.cellForItem(at: indexPath) as! testimonyCollectionViewCell
+                testimonyDetail.image = cell.cellImage.image
+                testimonyDetail.text = testimonies[indexPath.item].description
+                self.navigationController?.pushViewController(testimonyDetail, animated: true)
+            }
+            
         default:
             if let mainDetail = UIStoryboard.mainDetailViewController(){
                 self.navigationController?.pushViewController(mainDetail, animated: true)

@@ -10,9 +10,19 @@ import UIKit
 import InteractiveSideMenu
 
 class mainDetailViewController: UIViewController, SideMenuItemContent, Storyboardable{
-
+    
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailText: UITextView!
+    
+    var image = UIImage(named: "noImage")
+    var text = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        detailImage.image = image
+        detailText.text = text
+        
 
     }
     

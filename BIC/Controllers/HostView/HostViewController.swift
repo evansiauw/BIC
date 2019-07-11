@@ -36,9 +36,9 @@ class HostViewController: MenuContainerViewController {
 
         // Gather content items controllers
         self.contentViewControllers = contentControllers()
-        
-        // Select initial content controller. It's needed even if the first view controller should be selected.
-//        self.selectContentViewController(contentViewControllers.first!)
+//        
+//         Select initial content controller. It's needed even if the first view controller should be selected.
+        self.selectContentViewController(contentViewControllers.first!)
         
         self.currentItemOptions.cornerRadius = 10.0
     }

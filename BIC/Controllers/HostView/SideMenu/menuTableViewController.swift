@@ -14,7 +14,7 @@ import InteractiveSideMenu
  */
 class menuTableViewController: MenuViewController, Storyboardable {
     
-    let menuItems = ["Home","Service Schedules","Prayer Requests","Give A Donation","Settings", "About Us"]
+    let menuItems = ["Home","Service Schedules","Submit a Prayer Request","Give a Donation","Settings", "About Us"]
     let menuItemIcons:[UIImage] = [UIImage(named: "home")!,UIImage(named: "schedule")!,UIImage(named: "pray")!,UIImage(named: "give")!,UIImage(named: "setting")!,UIImage(named: "about")!]
 
     @IBOutlet weak var avatarImageViewCenterXConstraint: NSLayoutConstraint!

@@ -17,29 +17,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc9-aw-Bx9">
-                                <rect key="frame" x="5" y="25" width="39" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-Iw-9KX">
+                                <rect key="frame" x="0.0" y="25" width="375" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="6KV-hr-lOG"/>
-                                    <constraint firstAttribute="height" constant="21" id="gq3-Vf-9zW"/>
+                                    <constraint firstAttribute="height" constant="40" id="kvy-zh-TAj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLg-tn-ZYd">
+                                <rect key="frame" x="10" y="258.5" width="355" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="nOa-y6-gwh"/>
+                                </constraints>
+                                <string key="text">Bawalah seluruh persembahan persepuluhan itu ke dalam rumah perbendaharaan, supaya ada persediaan makanan di rumah-Ku dan ujilah Aku, firman TUHAN semesta alam, apakah Aku tidak membukakan bagimu tingkap-tingkap langit dan mencurahkan berkat kepadamu sampai berkelimpahan.</string>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-Ax-oCO">
+                                <rect key="frame" x="25" y="592" width="325" height="50"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nmf-FD-lSA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+                                <state key="normal" title="Give Donations">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maleakhi 3:10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omZ-LW-SZ3">
+                                <rect key="frame" x="10" y="233.5" width="355" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="kok-cv-ZSo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yc9-aw-Bx9" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="5" id="E4o-Ba-dvp"/>
-                            <constraint firstItem="yc9-aw-Bx9" firstAttribute="top" secondItem="BaB-4y-bNC" secondAttribute="top" constant="5" id="xws-Q4-Q5Y"/>
+                            <constraint firstItem="KLg-tn-ZYd" firstAttribute="top" secondItem="omZ-LW-SZ3" secondAttribute="bottom" id="6Uu-Ar-Xaz"/>
+                            <constraint firstItem="jMy-Iw-9KX" firstAttribute="top" secondItem="BaB-4y-bNC" secondAttribute="top" constant="5" id="F00-oi-NPO"/>
+                            <constraint firstItem="omZ-LW-SZ3" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="10" id="MnI-iF-2RP"/>
+                            <constraint firstItem="BaB-4y-bNC" firstAttribute="bottom" secondItem="WLQ-Ax-oCO" secondAttribute="bottom" constant="25" id="PkI-bY-Q3w"/>
+                            <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="omZ-LW-SZ3" secondAttribute="trailing" constant="10" id="Wmj-Qc-kFe"/>
+                            <constraint firstItem="KLg-tn-ZYd" firstAttribute="centerY" secondItem="BaB-4y-bNC" secondAttribute="centerY" id="Xvw-3n-auS"/>
+                            <constraint firstItem="KLg-tn-ZYd" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="10" id="eB4-Oh-syk"/>
+                            <constraint firstItem="WLQ-Ax-oCO" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="25" id="fKe-tv-9KN"/>
+                            <constraint firstItem="jMy-Iw-9KX" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" id="uum-6g-Oq7"/>
+                            <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="KLg-tn-ZYd" secondAttribute="trailing" constant="10" id="wcY-QY-o2D"/>
+                            <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="WLQ-Ax-oCO" secondAttribute="trailing" constant="25" id="xDD-a9-1vm"/>
+                            <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="jMy-Iw-9KX" secondAttribute="trailing" id="zVa-WK-Ion"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BaB-4y-bNC"/>
                     </view>
                     <navigationItem key="navigationItem" id="as2-Pc-fvT"/>
+                    <connections>
+                        <outlet property="donationButton" destination="WLQ-Ax-oCO" id="pOR-gK-ueG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6s-fi-n49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="-33.733133433283363"/>
         </scene>
     </scenes>
 </document>
