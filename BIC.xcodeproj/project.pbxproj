@@ -26,7 +26,6 @@
 		01349A85228790E10075544C /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349A84228790E10075544C /* HostViewController.swift */; };
 		01349A87228792490075544C /* host.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349A86228792490075544C /* host.storyboard */; };
 		013935412262C62000E32ECB /* announcementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935402262C62000E32ECB /* announcementCollectionViewCell.swift */; };
-		013935432262D9E600E32ECB /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935422262D9E600E32ECB /* UILabel.swift */; };
 		013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013935442263ABAB00E32ECB /* GoogleService-Info.plist */; };
 		013935472267BE9000E32ECB /* eventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935462267BE9000E32ECB /* eventCollectionViewCell.swift */; };
 		0139354A2267D2F800E32ECB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935492267D2F800E32ECB /* UIView.swift */; };
@@ -41,6 +40,7 @@
 		01713A1F226B601D0008013E /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A1E226B601D0008013E /* event.swift */; };
 		01713A22226E80890008013E /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A21226E80890008013E /* infoViewController.swift */; };
 		01713A24226E80BB0008013E /* info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* info.storyboard */; };
+		0178D43A22F26F710057AD49 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178D43922F26F710057AD49 /* UILabel.swift */; };
 		018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */; };
 		019B15B422753A6700FAD491 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15B322753A6700FAD491 /* UITextView.swift */; };
 		019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BB2283419500FAD491 /* menuTableViewController.swift */; };
@@ -103,7 +103,6 @@
 		01349A84228790E10075544C /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		01349A86228792490075544C /* host.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = host.storyboard; sourceTree = "<group>"; };
 		013935402262C62000E32ECB /* announcementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementCollectionViewCell.swift; sourceTree = "<group>"; };
-		013935422262D9E600E32ECB /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabel.swift; path = BIC/Helper/Extensions/UILabel.swift; sourceTree = SOURCE_ROOT; };
 		013935442263ABAB00E32ECB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		013935462267BE9000E32ECB /* eventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventCollectionViewCell.swift; sourceTree = "<group>"; };
 		013935492267D2F800E32ECB /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		01713A1E226B601D0008013E /* event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
 		01713A21226E80890008013E /* infoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 		01713A23226E80BB0008013E /* info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = info.storyboard; sourceTree = "<group>"; };
+		0178D43922F26F710057AD49 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
 		019B15B322753A6700FAD491 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		019B15BB2283419500FAD491 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
@@ -280,10 +280,10 @@
 				013345BE224AE1D0006F96F0 /* UIImageView.swift */,
 				013345C7224C4F04006F96F0 /* UIButton.swift */,
 				013345C9224C53F3006F96F0 /* UIColor.swift */,
-				013935422262D9E600E32ECB /* UILabel.swift */,
 				013935492267D2F800E32ECB /* UIView.swift */,
 				019B15B322753A6700FAD491 /* UITextView.swift */,
 				019B15BF2283433700FAD491 /* Storyboardable.swift */,
+				0178D43922F26F710057AD49 /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 				013345772249731F006F96F0 /* Sources */,
 				013345782249731F006F96F0 /* Frameworks */,
 				013345792249731F006F96F0 /* Resources */,
-				2CECBF7EEB83AA25B389BEFB /* [CP] Embed Pods Frameworks */,
+				2125E2B6AEF2EE12571CFEA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,6 +581,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2125E2B6AEF2EE12571CFEA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BIC/Pods-BIC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BIC/Pods-BIC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		269D748CC70C025703F11C79 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -597,40 +629,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CECBF7EEB83AA25B389BEFB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BIC/Pods-BIC-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BIC/Pods-BIC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		584CEA9A25274D2B75F609E8 /* [CP] Check Pods Manifest.lock */ = {
@@ -684,7 +682,6 @@
 				019B15D52284DAC800FAD491 /* donationViewController.swift in Sources */,
 				01713A1B226B5F0C0008013E /* devotional.swift in Sources */,
 				01713A19226B5D260008013E /* announcement.swift in Sources */,
-				013935432262D9E600E32ECB /* UILabel.swift in Sources */,
 				013345C6224C0B41006F96F0 /* headerMainTableView.swift in Sources */,
 				013345CF22511307006F96F0 /* mainCollectionViewCell.swift in Sources */,
 				013345872249731F006F96F0 /* BIC.xcdatamodeld in Sources */,
@@ -702,6 +699,7 @@
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
 				019B15D32284DAB300FAD491 /* settingViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
+				0178D43A22F26F710057AD49 /* UILabel.swift in Sources */,
 				013345C8224C4F04006F96F0 /* UIButton.swift in Sources */,
 				01713A22226E80890008013E /* infoViewController.swift in Sources */,
 				01713A172269080D0008013E /* mainDetailViewController.swift in Sources */,

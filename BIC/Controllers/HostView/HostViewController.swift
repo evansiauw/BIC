@@ -81,13 +81,13 @@ class HostViewController: MenuContainerViewController {
     }
     
     // Present Profile View
-    @objc func profileButtonClicked(){
-        
-        if let profileView = UIStoryboard.profileViewController(){
-            //            self.navigationController?.pushViewController(profileView, animated: true)
-            self.present(profileView, animated: true, completion: nil)
-        }
-    }
+//    @objc func profileButtonClicked(){
+//
+//        if let profileView = UIStoryboard.profileViewController(){
+//            //            self.navigationController?.pushViewController(profileView, animated: true)
+//            self.present(profileView, animated: true, completion: nil)
+//        }
+//    }
     
     private func contentControllers() -> [UIViewController] {
         
@@ -96,10 +96,6 @@ class HostViewController: MenuContainerViewController {
         let prayerController = UIStoryboard.prayerViewController()
         let donationController = UIStoryboard.donationViewController()
         let settingController = UIStoryboard.settingViewController()
-//        let scheduleController = UIStoryboard.storyboardNavigationController("schedule")
-//        let prayerController = UIStoryboard.storyboardNavigationController("prayer")
-//        let donationController = UIStoryboard.storyboardNavigationController("donation")
-//        let settingController = UIStoryboard.storyboardNavigationController("setting")
         
         return [mainController!, scheduleController!, prayerController!, donationController!, settingController!, settingController!]
 

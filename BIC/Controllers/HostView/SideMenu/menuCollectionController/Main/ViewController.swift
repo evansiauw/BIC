@@ -206,18 +206,6 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
 
     }
     
-    private func contentControllers() -> [UIViewController] {
-        
-        let mainController = UIStoryboard.storyboardNavigationController("host")
-        let scheduleController = UIStoryboard.storyboardNavigationController("schedule")
-        let prayerController = UIStoryboard.storyboardNavigationController("prayer")
-        let donationController = UIStoryboard.storyboardNavigationController("donation")
-        let settingController = UIStoryboard.storyboardNavigationController("setting")
-        
-        return [mainController, scheduleController, prayerController, donationController, settingController, settingController]
-    }
-    
-    
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 //        super.viewWillTransition(to: size, with: coordinator)
 //        
