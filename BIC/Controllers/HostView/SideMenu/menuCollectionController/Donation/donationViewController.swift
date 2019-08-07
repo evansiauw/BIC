@@ -12,11 +12,19 @@ class donationViewController: UIViewController {
     
     @IBOutlet weak var donationButton: UIButton!
     
+    @IBAction func donationWebsite(_ sender: Any) {
+        
+        guard let url = URL(string: "https://www.bethelic.com/building-fund-donation/") else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+ 
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         donationButton.roundAllButtonCorners()
-    
     }
  
 

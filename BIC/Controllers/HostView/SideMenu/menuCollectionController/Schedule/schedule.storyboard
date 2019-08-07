@@ -27,12 +27,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="serviceTime" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-PS-W2P">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MLp-ts-MxE" firstAttribute="bottom" secondItem="TCJ-PS-W2P" secondAttribute="bottom" id="9Uw-6P-q0b"/>
                             <constraint firstItem="LKd-5e-L4A" firstAttribute="top" secondItem="MLp-ts-MxE" secondAttribute="top" constant="5" id="AfC-JP-3vS"/>
+                            <constraint firstItem="TCJ-PS-W2P" firstAttribute="top" secondItem="LKd-5e-L4A" secondAttribute="bottom" id="Ag0-nL-xV2"/>
                             <constraint firstItem="MLp-ts-MxE" firstAttribute="trailing" secondItem="LKd-5e-L4A" secondAttribute="trailing" id="Jnb-Cm-4C7"/>
+                            <constraint firstItem="MLp-ts-MxE" firstAttribute="trailing" secondItem="TCJ-PS-W2P" secondAttribute="trailing" id="hmp-W3-edo"/>
                             <constraint firstItem="LKd-5e-L4A" firstAttribute="leading" secondItem="MLp-ts-MxE" secondAttribute="leading" id="lWi-uo-Z80"/>
+                            <constraint firstItem="TCJ-PS-W2P" firstAttribute="leading" secondItem="MLp-ts-MxE" secondAttribute="leading" id="zkF-Gh-j9g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MLp-ts-MxE"/>
                     </view>
@@ -43,4 +50,7 @@
             <point key="canvasLocation" x="1544.8" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="serviceTime" width="542" height="659"/>
+    </resources>
 </document>

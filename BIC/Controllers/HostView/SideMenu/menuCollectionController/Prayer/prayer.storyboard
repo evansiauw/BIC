@@ -70,6 +70,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPrayers:" destination="BhP-T3-Yhq" eventType="touchUpInside" id="bcV-7O-3vc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,6 +101,7 @@
                     <navigationItem key="navigationItem" id="ABJ-Py-aSa"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="ZzB-yh-ZwE" id="apf-8M-w8r"/>
+                        <outlet property="prayerTitle" destination="nD3-GH-j7Q" id="PIU-6G-iqU"/>
                         <outlet property="submitButton" destination="GYK-lt-MxS" id="Ogn-tA-lQH"/>
                     </connections>
                 </viewController>

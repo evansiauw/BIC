@@ -121,7 +121,6 @@ class eventCollectionViewCell: UICollectionViewCell {
             ])
         
 
-
     }
     
     required init?(coder aDecoder: NSCoder) {

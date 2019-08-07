@@ -27,7 +27,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECL-hh-xCM">
                                 <rect key="frame" x="0.0" y="270" width="375" height="397"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
