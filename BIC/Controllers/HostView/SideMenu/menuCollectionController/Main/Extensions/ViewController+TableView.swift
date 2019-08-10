@@ -142,6 +142,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 let cell = collectionView.cellForItem(at: indexPath) as! announcementCollectionViewCell
                 announcementDetail.image = cell.cellImage.image
                 announcementDetail.text = announcements[indexPath.item].description
+                announcementDetail.navigationItem.title = cell.titleLabel.text
                 self.navigationController?.pushViewController(announcementDetail, animated: true)
             }
         case 1:
@@ -160,6 +161,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 eventDetail.titleText = events[indexPath.item].title
                 eventDetail.attendeeText = "\(events[indexPath.item].attendee) people attending"
                 eventDetail.descriptionText = events[indexPath.item].description
+                eventDetail.navigationItem.title = events[indexPath.item].title
                 eventDetail.latitude = events[indexPath.item].latitude
                 eventDetail.longitude = events[indexPath.item].longitude
 
@@ -172,6 +174,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 let cell = collectionView.cellForItem(at: indexPath) as! mainCollectionViewCell
                 mainDetail.image = cell.cellImage.image
                 mainDetail.text = devotionals[indexPath.item].description
+                mainDetail.navigationItem.title = cell.titleLabel.text
                 self.navigationController?.pushViewController(mainDetail, animated: true)
             }
             
@@ -181,6 +184,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 let cell = collectionView.cellForItem(at: indexPath) as! testimonyCollectionViewCell
                 testimonyDetail.image = cell.cellImage.image
                 testimonyDetail.text = testimonies[indexPath.item].description
+                testimonyDetail.navigationItem.title = cell.titleLabel.text
                 self.navigationController?.pushViewController(testimonyDetail, animated: true)
             }
             

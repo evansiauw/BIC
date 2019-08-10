@@ -36,13 +36,13 @@
                                             <constraint firstAttribute="height" constant="170" id="jQu-e6-mK4"/>
                                         </constraints>
                                     </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Year's Eve Celebration Service" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klK-uZ-Kl0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42-54 81st street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klK-uZ-Kl0">
                                         <rect key="frame" x="0.0" y="205" width="355" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="d5L-zB-Ox8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -59,7 +59,19 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="dtK-ww-Ors" firstAttribute="top" secondItem="klK-uZ-Kl0" secondAttribute="bottom" id="0qZ-d2-HDh"/>
+                                    <constraint firstAttribute="trailing" secondItem="TfA-OL-o2R" secondAttribute="trailing" constant="10" id="0uk-Bx-2zH"/>
+                                    <constraint firstAttribute="trailing" secondItem="XLB-rk-pkq" secondAttribute="trailing" constant="10" id="2Z1-nv-tGV"/>
+                                    <constraint firstItem="TfA-OL-o2R" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="49S-Px-wwj"/>
+                                    <constraint firstItem="TfA-OL-o2R" firstAttribute="top" secondItem="XLB-rk-pkq" secondAttribute="bottom" id="4th-O5-Usb"/>
+                                    <constraint firstItem="XLB-rk-pkq" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="8vc-2e-Mdl"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtK-ww-Ors" secondAttribute="trailing" constant="10" id="Bw4-Bm-cx3"/>
+                                    <constraint firstItem="klK-uZ-Kl0" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="KeR-R4-3zp"/>
+                                    <constraint firstItem="XLB-rk-pkq" firstAttribute="top" secondItem="tCI-tU-iQR" secondAttribute="top" id="ZPe-At-nwc"/>
+                                    <constraint firstItem="klK-uZ-Kl0" firstAttribute="top" secondItem="TfA-OL-o2R" secondAttribute="bottom" id="aO6-kc-AK1"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="285" id="hA0-em-UMR"/>
+                                    <constraint firstItem="dtK-ww-Ors" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="vqi-uy-2ms"/>
+                                    <constraint firstAttribute="trailing" secondItem="klK-uZ-Kl0" secondAttribute="trailing" constant="10" id="xQy-A7-guj"/>
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6ql-bS-L3O">

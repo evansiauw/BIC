@@ -8,7 +8,7 @@
 import UIKit
 import InteractiveSideMenu
 
-class HostViewController: MenuContainerViewController {
+class HostViewController: MenuContainerViewController{
     
     lazy var titleImage: UIImageView = {
         
@@ -70,8 +70,8 @@ class HostViewController: MenuContainerViewController {
         navigationItem.leftBarButtonItem?.tintColor = .black
         
         // Right Bar Menu Button
-        let infoImage = UIImage(named: "about")
-        let profileMenuButton = UIBarButtonItem(image: infoImage, style: .plain, target: self, action: nil)
+        let homeImage = UIImage(named: "homeBlack")
+        let profileMenuButton = UIBarButtonItem(image: homeImage, style: .plain, target: self, action: #selector(profileButtonClicked))
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
@@ -80,14 +80,16 @@ class HostViewController: MenuContainerViewController {
         showSideMenu()
     }
     
-    // Present Profile View
-//    @objc func profileButtonClicked(){
-//
+    @objc func profileButtonClicked(){
+        
+        print("Navigating to home screen")
+        self.selectContentViewController(contentViewControllers.first!)
+
 //        if let profileView = UIStoryboard.profileViewController(){
 //            //            self.navigationController?.pushViewController(profileView, animated: true)
 //            self.present(profileView, animated: true, completion: nil)
 //        }
-//    }
+    }
     
     private func contentControllers() -> [UIViewController] {
         

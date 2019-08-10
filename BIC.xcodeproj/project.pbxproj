@@ -42,6 +42,7 @@
 		01713A24226E80BB0008013E /* info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* info.storyboard */; };
 		0178D43A22F26F710057AD49 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178D43922F26F710057AD49 /* UILabel.swift */; };
 		018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */; };
+		018C371122FE45880058514C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C371022FE45880058514C /* UITextField.swift */; };
 		019B15B422753A6700FAD491 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15B322753A6700FAD491 /* UITextView.swift */; };
 		019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15BB2283419500FAD491 /* menuTableViewController.swift */; };
 		019B15BE2283427900FAD491 /* menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15BD2283427900FAD491 /* menu.storyboard */; };
@@ -119,6 +120,7 @@
 		01713A23226E80BB0008013E /* info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = info.storyboard; sourceTree = "<group>"; };
 		0178D43922F26F710057AD49 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
+		018C371022FE45880058514C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		019B15B322753A6700FAD491 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		019B15BB2283419500FAD491 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
 		019B15BD2283427900FAD491 /* menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = menu.storyboard; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				019B15B322753A6700FAD491 /* UITextView.swift */,
 				019B15BF2283433700FAD491 /* Storyboardable.swift */,
 				0178D43922F26F710057AD49 /* UILabel.swift */,
+				018C371022FE45880058514C /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				013345BF224AE1D0006F96F0 /* UIImageView.swift in Sources */,
 				018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */,
 				01713A1F226B601D0008013E /* event.swift in Sources */,
+				018C371122FE45880058514C /* UITextField.swift in Sources */,
 				019B15C22283500700FAD491 /* menuTableViewCell.swift in Sources */,
 				01349A85228790E10075544C /* HostViewController.swift in Sources */,
 				01713A0D2268E80A0008013E /* testimonyCollectionViewCell.swift in Sources */,
