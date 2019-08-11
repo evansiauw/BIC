@@ -2,7 +2,6 @@
 Bethel International Church iOS app
 
 ## Screenshot
-![Alt-Text](https://github.com/evansiauw/BIC/blob/master/BIC.gif)
-
+<img src="https://github.com/evansiauw/BIC/blob/master/BIC.gif" width="200" height="400">
 ## Authors
 Evansiauw
