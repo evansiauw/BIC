@@ -56,6 +56,8 @@
 		019B15D72284DAD700FAD491 /* prayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D62284DAD700FAD491 /* prayerViewController.swift */; };
 		019B15D92284DAE800FAD491 /* scheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15D82284DAE800FAD491 /* scheduleViewController.swift */; };
 		019B15DB2284DDD100FAD491 /* prayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019B15DA2284DDD100FAD491 /* prayer.storyboard */; };
+		01D0D3A0230395B900AF32F9 /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D0D39F230395B900AF32F9 /* aboutViewController.swift */; };
+		01D0D3A2230395CD00AF32F9 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D0D3A1230395CD00AF32F9 /* about.storyboard */; };
 		3B22878334575D3C50FC23D5 /* Pods_BICUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */; };
 		56BF3ED7F4FBFE49B50C1545 /* Pods_BIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */; };
 		C4FB9D4B5FB83044BD4FA38D /* Pods_BICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B49490EACBEBFA1D0ABFE87 /* Pods_BICTests.framework */; };
@@ -134,6 +136,8 @@
 		019B15D62284DAD700FAD491 /* prayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prayerViewController.swift; sourceTree = "<group>"; };
 		019B15D82284DAE800FAD491 /* scheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleViewController.swift; sourceTree = "<group>"; };
 		019B15DA2284DDD100FAD491 /* prayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = prayer.storyboard; sourceTree = "<group>"; };
+		01D0D39F230395B900AF32F9 /* aboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
+		01D0D3A1230395CD00AF32F9 /* about.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
 		17A0E7E7A21F0D946010D76F /* Pods_BICUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BICUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EDC42D48E0414DB3A18861 /* Pods_BIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BF31E7184A723230837E6E /* Pods-BIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIC/Pods-BIC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				019B15C72284B22300FAD491 /* Prayer */,
 				019B15C82284B23800FAD491 /* Donation */,
 				019B15C92284B23E00FAD491 /* Setting */,
+				01D0D39E2303954200AF32F9 /* About */,
 			);
 			path = menuCollectionController;
 			sourceTree = "<group>";
@@ -418,6 +423,15 @@
 				018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		01D0D39E2303954200AF32F9 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				01D0D39F230395B900AF32F9 /* aboutViewController.swift */,
+				01D0D3A1230395CD00AF32F9 /* about.storyboard */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		C6EC3F9830447A1C36999B2A /* Frameworks */ = {
@@ -563,6 +577,7 @@
 				01713A15226907C40008013E /* mainDetail.storyboard in Resources */,
 				013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */,
 				0133458922497321006F96F0 /* Assets.xcassets in Resources */,
+				01D0D3A2230395CD00AF32F9 /* about.storyboard in Resources */,
 				013345842249731F006F96F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,6 +722,7 @@
 				013345C4224BF88E006F96F0 /* mainTableViewCell.swift in Sources */,
 				019B15C02283433700FAD491 /* Storyboardable.swift in Sources */,
 				013345812249731F006F96F0 /* ViewController.swift in Sources */,
+				01D0D3A0230395B900AF32F9 /* aboutViewController.swift in Sources */,
 				019B15D32284DAB300FAD491 /* settingViewController.swift in Sources */,
 				0133457F2249731F006F96F0 /* AppDelegate.swift in Sources */,
 				0178D43A22F26F710057AD49 /* UILabel.swift in Sources */,

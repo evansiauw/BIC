@@ -59,23 +59,11 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dtK-ww-Ors" firstAttribute="top" secondItem="klK-uZ-Kl0" secondAttribute="bottom" id="0qZ-d2-HDh"/>
-                                    <constraint firstAttribute="trailing" secondItem="TfA-OL-o2R" secondAttribute="trailing" constant="10" id="0uk-Bx-2zH"/>
-                                    <constraint firstAttribute="trailing" secondItem="XLB-rk-pkq" secondAttribute="trailing" constant="10" id="2Z1-nv-tGV"/>
-                                    <constraint firstItem="TfA-OL-o2R" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="49S-Px-wwj"/>
-                                    <constraint firstItem="TfA-OL-o2R" firstAttribute="top" secondItem="XLB-rk-pkq" secondAttribute="bottom" id="4th-O5-Usb"/>
-                                    <constraint firstItem="XLB-rk-pkq" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="8vc-2e-Mdl"/>
-                                    <constraint firstAttribute="trailing" secondItem="dtK-ww-Ors" secondAttribute="trailing" constant="10" id="Bw4-Bm-cx3"/>
-                                    <constraint firstItem="klK-uZ-Kl0" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="KeR-R4-3zp"/>
-                                    <constraint firstItem="XLB-rk-pkq" firstAttribute="top" secondItem="tCI-tU-iQR" secondAttribute="top" id="ZPe-At-nwc"/>
-                                    <constraint firstItem="klK-uZ-Kl0" firstAttribute="top" secondItem="TfA-OL-o2R" secondAttribute="bottom" id="aO6-kc-AK1"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="285" id="hA0-em-UMR"/>
-                                    <constraint firstItem="dtK-ww-Ors" firstAttribute="leading" secondItem="tCI-tU-iQR" secondAttribute="leading" constant="10" id="vqi-uy-2ms"/>
-                                    <constraint firstAttribute="trailing" secondItem="klK-uZ-Kl0" secondAttribute="trailing" constant="10" id="xQy-A7-guj"/>
+                                    <constraint firstAttribute="height" constant="285" id="hA0-em-UMR"/>
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6ql-bS-L3O">
-                                <rect key="frame" x="10" y="323" width="355" height="344"/>
+                                <rect key="frame" x="10" y="325" width="355" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
@@ -84,13 +72,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tCI-tU-iQR" firstAttribute="leading" secondItem="uIh-Sh-Ghl" secondAttribute="leading" constant="10" id="91Q-5p-Ntc"/>
                             <constraint firstItem="tCI-tU-iQR" firstAttribute="top" secondItem="uIh-Sh-Ghl" secondAttribute="top" constant="10" id="GZe-or-KVj"/>
-                            <constraint firstItem="6ql-bS-L3O" firstAttribute="top" secondItem="dtK-ww-Ors" secondAttribute="bottom" constant="8" id="XG5-zc-fNe"/>
-                            <constraint firstItem="uIh-Sh-Ghl" firstAttribute="bottom" secondItem="6ql-bS-L3O" secondAttribute="bottom" id="Xrm-zw-254"/>
-                            <constraint firstItem="uIh-Sh-Ghl" firstAttribute="trailing" secondItem="6ql-bS-L3O" secondAttribute="trailing" constant="10" id="qSJ-8b-sVL"/>
-                            <constraint firstAttribute="trailing" secondItem="tCI-tU-iQR" secondAttribute="trailing" constant="10" id="xVp-Rd-zIp"/>
-                            <constraint firstItem="6ql-bS-L3O" firstAttribute="leading" secondItem="uIh-Sh-Ghl" secondAttribute="leading" constant="10" id="xlb-bV-oaO"/>
+                            <constraint firstItem="6ql-bS-L3O" firstAttribute="leading" secondItem="uIh-Sh-Ghl" secondAttribute="leading" constant="10" id="MX8-E7-J8Z"/>
+                            <constraint firstItem="uIh-Sh-Ghl" firstAttribute="bottom" secondItem="6ql-bS-L3O" secondAttribute="bottom" constant="10" id="Xrm-zw-254"/>
+                            <constraint firstItem="6ql-bS-L3O" firstAttribute="top" secondItem="tCI-tU-iQR" secondAttribute="bottom" constant="10" id="dn3-3X-FDB"/>
+                            <constraint firstItem="uIh-Sh-Ghl" firstAttribute="trailing" secondItem="tCI-tU-iQR" secondAttribute="trailing" constant="10" id="lF6-El-ZDq"/>
+                            <constraint firstItem="uIh-Sh-Ghl" firstAttribute="trailing" secondItem="6ql-bS-L3O" secondAttribute="trailing" constant="10" id="r5U-4y-t1h"/>
+                            <constraint firstItem="tCI-tU-iQR" firstAttribute="leading" secondItem="uIh-Sh-Ghl" secondAttribute="leading" constant="10" id="z1F-32-2eG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIh-Sh-Ghl"/>
                     </view>

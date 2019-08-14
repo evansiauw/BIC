@@ -65,6 +65,12 @@ extension UIStoryboard {
     static func settingStoryboard() -> UIStoryboard { return UIStoryboard(name: "setting", bundle: Bundle.main) }
     
     
+    static func aboutViewController() -> aboutViewController? {
+        return aboutStoryboard().instantiateViewController(withIdentifier: "about") as? aboutViewController
+    }
+    static func aboutStoryboard() -> UIStoryboard { return UIStoryboard(name: "about", bundle: Bundle.main) }
+    
+    
     
     //    static func storyboardNavigationController(_ name: String) -> UIViewController {
     //        let storyboard = UIStoryboard(name: name, bundle: nil)

@@ -69,6 +69,8 @@ class HostViewController: MenuContainerViewController{
         navigationItem.leftBarButtonItem = sideMenuButton
         navigationItem.leftBarButtonItem?.tintColor = .black
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         // Right Bar Menu Button
         let homeImage = UIImage(named: "homeBlack")
         let profileMenuButton = UIBarButtonItem(image: homeImage, style: .plain, target: self, action: #selector(profileButtonClicked))
@@ -98,8 +100,9 @@ class HostViewController: MenuContainerViewController{
         let prayerController = UIStoryboard.prayerViewController()
         let donationController = UIStoryboard.donationViewController()
         let settingController = UIStoryboard.settingViewController()
+        let aboutController = UIStoryboard.aboutViewController()
         
-        return [mainController!, scheduleController!, prayerController!, donationController!, settingController!, settingController!]
+        return [mainController!, scheduleController!, prayerController!, donationController!, settingController!, aboutController!]
 
     }
 }
