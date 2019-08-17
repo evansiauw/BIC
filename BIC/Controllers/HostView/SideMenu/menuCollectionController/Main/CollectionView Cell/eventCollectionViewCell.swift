@@ -11,7 +11,7 @@ import UIKit
 
 class eventCollectionViewCell: UICollectionViewCell {
     
-    let labelStackContainerHeight: CGFloat = 110
+    let labelStackContainerHeight: CGFloat = 90
     let padding: CGFloat = 5
     
     lazy var cellImage: UIImageView = {
@@ -28,7 +28,7 @@ class eventCollectionViewCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
 
-        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 60)
+        let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 40)
         let label = UILabel(frame: frame)
         label.font = UIFont(name: "Rockwell", size: 18)
         label.numberOfLines = 0

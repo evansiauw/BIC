@@ -8,6 +8,13 @@
 import UIKit
 import InteractiveSideMenu
 
+
+/* TODO:
+ - Need to fix the cursor on selected menu option when home button pressed
+ -
+ -
+ */
+
 class HostViewController: MenuContainerViewController{
     
     lazy var titleImage: UIImageView = {
@@ -36,8 +43,8 @@ class HostViewController: MenuContainerViewController{
 
         // Gather content items controllers
         self.contentViewControllers = contentControllers()
-//        
-//         Select initial content controller. It's needed even if the first view controller should be selected.
+       
+        // Select initial content controller. It's needed even if the first view controller should be selected.
         self.selectContentViewController(contentViewControllers.first!)
         
         self.currentItemOptions.cornerRadius = 10.0
@@ -73,7 +80,7 @@ class HostViewController: MenuContainerViewController{
         
         // Right Bar Menu Button
         let homeImage = UIImage(named: "homeBlack")
-        let profileMenuButton = UIBarButtonItem(image: homeImage, style: .plain, target: self, action: #selector(profileButtonClicked))
+        let profileMenuButton = UIBarButtonItem(image: homeImage, style: .plain, target: self, action: #selector(homeButtonClicked))
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
@@ -82,15 +89,11 @@ class HostViewController: MenuContainerViewController{
         showSideMenu()
     }
     
-    @objc func profileButtonClicked(){
+    @objc func homeButtonClicked(){
         
         print("Navigating to home screen")
         self.selectContentViewController(contentViewControllers.first!)
 
-//        if let profileView = UIStoryboard.profileViewController(){
-//            //            self.navigationController?.pushViewController(profileView, animated: true)
-//            self.present(profileView, animated: true, completion: nil)
-//        }
     }
     
     private func contentControllers() -> [UIViewController] {
@@ -106,3 +109,9 @@ class HostViewController: MenuContainerViewController{
 
     }
 }
+
+
+//        if let profileView = UIStoryboard.profileViewController(){
+//            //            self.navigationController?.pushViewController(profileView, animated: true)
+//            self.present(profileView, animated: true, completion: nil)
+//        }
