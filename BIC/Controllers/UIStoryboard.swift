@@ -59,10 +59,10 @@ extension UIStoryboard {
     static func donationStoryboard() -> UIStoryboard { return UIStoryboard(name: "donation", bundle: Bundle.main) }
     
     
-    static func settingViewController() -> settingViewController? {
-        return settingStoryboard().instantiateViewController(withIdentifier: "setting") as? settingViewController
+    static func errorViewController() -> errorViewController? {
+        return errorStoryboard().instantiateViewController(withIdentifier: "error") as? errorViewController
     }
-    static func settingStoryboard() -> UIStoryboard { return UIStoryboard(name: "setting", bundle: Bundle.main) }
+    static func errorStoryboard() -> UIStoryboard { return UIStoryboard(name: "error", bundle: Bundle.main) }
     
     
     static func aboutViewController() -> aboutViewController? {
@@ -70,6 +70,10 @@ extension UIStoryboard {
     }
     static func aboutStoryboard() -> UIStoryboard { return UIStoryboard(name: "about", bundle: Bundle.main) }
     
+    static func settingViewController() -> settingViewController? {
+        return settingStoryboard().instantiateViewController(withIdentifier: "setting") as? settingViewController
+    }
+    static func settingStoryboard() -> UIStoryboard { return UIStoryboard(name: "setting", bundle: Bundle.main) }
     
     
     //    static func storyboardNavigationController(_ name: String) -> UIViewController {

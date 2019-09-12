@@ -29,6 +29,8 @@
 		013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013935442263ABAB00E32ECB /* GoogleService-Info.plist */; };
 		013935472267BE9000E32ECB /* eventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935462267BE9000E32ECB /* eventCollectionViewCell.swift */; };
 		0139354A2267D2F800E32ECB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013935492267D2F800E32ECB /* UIView.swift */; };
+		016456DF232881E300ED23F6 /* error.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016456DE232881E300ED23F6 /* error.storyboard */; };
+		016456E12328820200ED23F6 /* errorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016456E02328820200ED23F6 /* errorViewController.swift */; };
 		01713A0D2268E80A0008013E /* testimonyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A0C2268E80A0008013E /* testimonyCollectionViewCell.swift */; };
 		01713A102268FC5C0008013E /* eventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A0F2268FC5C0008013E /* eventDetailViewController.swift */; };
 		01713A12226901DD0008013E /* event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A11226901DD0008013E /* event.storyboard */; };
@@ -109,6 +111,8 @@
 		013935442263ABAB00E32ECB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		013935462267BE9000E32ECB /* eventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventCollectionViewCell.swift; sourceTree = "<group>"; };
 		013935492267D2F800E32ECB /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		016456DE232881E300ED23F6 /* error.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = error.storyboard; sourceTree = "<group>"; };
+		016456E02328820200ED23F6 /* errorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorViewController.swift; sourceTree = "<group>"; };
 		01713A0C2268E80A0008013E /* testimonyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testimonyCollectionViewCell.swift; sourceTree = "<group>"; };
 		01713A0F2268FC5C0008013E /* eventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventDetailViewController.swift; sourceTree = "<group>"; };
 		01713A11226901DD0008013E /* event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = event.storyboard; sourceTree = "<group>"; };
@@ -323,6 +327,15 @@
 			path = "CollectionView Cell";
 			sourceTree = "<group>";
 		};
+		016456DD23287FDA00ED23F6 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				016456DE232881E300ED23F6 /* error.storyboard */,
+				016456E02328820200ED23F6 /* errorViewController.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		01713A0E2268EAA00008013E /* eventDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,8 +395,9 @@
 				019B15C62284B21700FAD491 /* Schedule */,
 				019B15C72284B22300FAD491 /* Prayer */,
 				019B15C82284B23800FAD491 /* Donation */,
-				019B15C92284B23E00FAD491 /* Setting */,
+				016456DD23287FDA00ED23F6 /* Error */,
 				01D0D39E2303954200AF32F9 /* About */,
+				019B15C92284B23E00FAD491 /* Setting */,
 			);
 			path = menuCollectionController;
 			sourceTree = "<group>";
@@ -529,13 +543,16 @@
 				TargetAttributes = {
 					0133457A2249731F006F96F0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 					};
 					0133459122497321006F96F0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						TestTargetID = 0133457A2249731F006F96F0;
 					};
 					0133459C22497321006F96F0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						TestTargetID = 0133457A2249731F006F96F0;
 					};
 				};
@@ -573,6 +590,7 @@
 				019B15D12284DA8000FAD491 /* schedule.storyboard in Resources */,
 				019B15CB2284DA4200FAD491 /* setting.storyboard in Resources */,
 				01713A12226901DD0008013E /* event.storyboard in Resources */,
+				016456DF232881E300ED23F6 /* error.storyboard in Resources */,
 				019B15BE2283427900FAD491 /* menu.storyboard in Resources */,
 				01713A15226907C40008013E /* mainDetail.storyboard in Resources */,
 				013935452263ABAB00E32ECB /* GoogleService-Info.plist in Resources */,
@@ -731,6 +749,7 @@
 				01713A172269080D0008013E /* mainDetailViewController.swift in Sources */,
 				013935472267BE9000E32ECB /* eventCollectionViewCell.swift in Sources */,
 				013345C1224AF95C006F96F0 /* ViewController+TableView.swift in Sources */,
+				016456E12328820200ED23F6 /* errorViewController.swift in Sources */,
 				013935412262C62000E32ECB /* announcementCollectionViewCell.swift in Sources */,
 				019B15BC2283419500FAD491 /* menuTableViewController.swift in Sources */,
 			);
@@ -918,7 +937,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -938,7 +957,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -959,7 +978,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BICTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BIC.app/BIC";
 			};
@@ -981,7 +1000,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BICTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BIC.app/BIC";
 			};
@@ -1002,7 +1021,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BICUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = BIC;
 			};
@@ -1023,7 +1042,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BICUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = BIC;
 			};

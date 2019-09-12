@@ -102,10 +102,10 @@ class HostViewController: MenuContainerViewController{
         let scheduleController = UIStoryboard.scheduleViewController()
         let prayerController = UIStoryboard.prayerViewController()
         let donationController = UIStoryboard.donationViewController()
-        let settingController = UIStoryboard.settingViewController()
+        let errorController = UIStoryboard.errorViewController()
         let aboutController = UIStoryboard.aboutViewController()
         
-        return [mainController!, scheduleController!, prayerController!, donationController!, settingController!, aboutController!]
+        return [mainController!, scheduleController!, prayerController!, donationController!, errorController!, aboutController!]
 
     }
 }

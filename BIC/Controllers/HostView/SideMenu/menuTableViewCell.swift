@@ -22,8 +22,8 @@ class menuTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        selectedView.backgroundColor = selected ? UIColor.yellow : UIColor.clear
-        cellLabel.textColor = selected ? UIColor.yellow : UIColor.white
+        selectedView.backgroundColor = selected ? UIColor.green : UIColor.clear
+        cellLabel.textColor = selected ? UIColor.green : UIColor.white
     }
 }
 
