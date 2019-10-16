@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9U4-fm-7FJ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9U4-fm-7FJ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,8 +41,8 @@
 
 Mark 12: 30-31
 “You shall love the Lord your God with all your heart, with all your soul, with all your mind, and with all your strength.” And the second, like it, is this: ‘You shall love your neighbor as yourself.’ There is no other commandment greater than these.” </string>
-                                                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="13"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -84,8 +83,8 @@ To transform one soul at a time:
 · From sickness to health
 · From chaos to order
 · From destruction to destiny</string>
-                                                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="12"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="12"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -95,7 +94,6 @@ To transform one soul at a time:
                                                 <constraints>
                                                     <constraint firstItem="Hc2-9p-Vg9" firstAttribute="top" secondItem="6dl-wt-EOt" secondAttribute="top" constant="8" id="CiM-CC-oWj"/>
                                                     <constraint firstAttribute="height" constant="250" id="On2-Oh-p4c"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="ZuY-Rm-y1h"/>
                                                     <constraint firstItem="Hc2-9p-Vg9" firstAttribute="width" secondItem="6dl-wt-EOt" secondAttribute="width" constant="-16" id="ejX-Se-b5Q"/>
                                                     <constraint firstItem="Hc2-9p-Vg9" firstAttribute="leading" secondItem="6dl-wt-EOt" secondAttribute="leading" constant="8" id="fym-8Y-gd5"/>
                                                     <constraint firstItem="Hc2-9p-Vg9" firstAttribute="height" secondItem="6dl-wt-EOt" secondAttribute="height" constant="-16" id="yWZ-2x-h5Q"/>
@@ -122,8 +120,8 @@ To bear fruit and multiply
 To produce excellent results
 To unite our faith
 To be faithful till the end &amp; finish the race</string>
-                                                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="13"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -134,7 +132,6 @@ To be faithful till the end &amp; finish the race</string>
                                                     <constraint firstItem="b2f-OZ-mtq" firstAttribute="leading" secondItem="61I-ba-uON" secondAttribute="leading" constant="8" id="CKH-AU-zNT"/>
                                                     <constraint firstAttribute="height" constant="200" id="JIL-aS-M2v"/>
                                                     <constraint firstItem="b2f-OZ-mtq" firstAttribute="top" secondItem="61I-ba-uON" secondAttribute="top" constant="8" id="WEo-73-4gS"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="hYc-cR-bPb"/>
                                                     <constraint firstAttribute="bottom" secondItem="b2f-OZ-mtq" secondAttribute="bottom" constant="8" id="k1y-Aj-IYb"/>
                                                     <constraint firstItem="b2f-OZ-mtq" firstAttribute="width" secondItem="61I-ba-uON" secondAttribute="width" constant="-16" id="qlb-kx-NA5"/>
                                                 </constraints>

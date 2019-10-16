@@ -21,14 +21,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
         return tableViewTitle.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        let title = tableViewTitle[section]
+//        return title
+//    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+                    "sectionHeader") as! headerMainTableView
+        view.tintColor = .white
+        view.title.text = tableViewTitle[section]
 
-        let title = tableViewTitle[section]
-        return title
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 60
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -99,7 +109,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCollectionViewCell", for: indexPath as IndexPath) as! eventCollectionViewCell
             cell.titleLabel.text = events[indexPath.item].title
-            cell.attendeesLabel.text = "\(events[indexPath.item].attendee) people going"
+            
+            let numOfAttendees = events[indexPath.item].attendee
+            let attendees = NSMutableAttributedString(string: "\(numOfAttendees)",
+                attributes: [.foregroundColor: numOfAttendees == 0 ? UIColor.red : UIColor.init(red: 3, green: 125, blue: 80)])
+            let attendeeString = NSMutableAttributedString(string: " People Going")
+            attendees.append(attendeeString)
+
+            cell.attendeesLabel.attributedText = attendees
             
             if let timeStamp = events[indexPath.item].eventTime{
                 let date = Date(timeIntervalSince1970: timeStamp / 1000)
@@ -110,6 +127,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 dateFormatter.timeStyle = .short
                 cell.dateLabel.text = dateFormatter.string(from: date as Date)
             }
+            
+            if let imageRef = events[indexPath.item].image {
+
+                let httpRef = Storage.storage().reference(forURL: imageRef)
+
+                httpRef.getData(maxSize: 1 * 1024 * 1024, completion: { data, error in
+                    if let error = error {
+                        print(error)
+                    } else {
+
+                        DispatchQueue.main.async {
+                            cell.cellImage.image = UIImage(data: data!)
+                        }
+                    }
+                })
+            }
+            
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             return cell
@@ -158,8 +192,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                     eventDetail.dateText = dateFormatter.string(from: date as Date)
                 }
 
-                eventDetail.titleText = events[indexPath.item].title
-                eventDetail.attendeeText = "\(events[indexPath.item].attendee) people attending"
+//                eventDetail.titleText = events[indexPath.item].title
+                eventDetail.numOfAttendees = events[indexPath.item].attendee
                 eventDetail.descriptionText = events[indexPath.item].description
                 eventDetail.navigationItem.title = events[indexPath.item].title
                 eventDetail.latitude = events[indexPath.item].latitude
@@ -320,12 +354,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
 //        return 100
 //    }
 //
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
-//        headerView.backgroundColor = .gray
-//        return headerView
-//    }
 
 //    func touchesShouldCancel(in view: UIView) -> Bool {
 //

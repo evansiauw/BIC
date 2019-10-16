@@ -18,8 +18,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - labelStackContainerHeight)
         let image = UIImageView(frame: frame)
-        image.image = UIImage(named: "cool")
-        image.contentMode = .scaleAspectFit
+        image.image = UIImage(named: "noImage")
+        image.contentMode = .scaleAspectFill
         image.backgroundColor = .lightGray
         image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -33,8 +33,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "Rockwell", size: 18)
         label.numberOfLines = 0
 //        label.sizeToFit()
-        label.textColor = .white
-        label.backgroundColor = .darkGray
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
+        label.backgroundColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,10 +44,11 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
         let label = UILabel(frame: frame)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.text = "December 31st, 2019 at 12:00am"
         label.numberOfLines = 2
-        label.backgroundColor = .darkGray
-        label.textColor = .white
+        label.backgroundColor = .white
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -57,9 +58,10 @@ class eventCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
         let label = UILabel(frame: frame)
-        label.text = "0 people going"
-        label.textColor = .white
-        label.backgroundColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "Error"
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
+        label.backgroundColor = .white
         label.textAlignment = .center
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
         label.padding = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)

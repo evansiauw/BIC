@@ -8,7 +8,6 @@
 import UIKit
 import InteractiveSideMenu
 
-
 /* TODO:
  - Need to fix the cursor on selected menu option when home button pressed
  -
@@ -40,6 +39,7 @@ class HostViewController: MenuContainerViewController{
         
         // Instantiate menu view controller by identifier
         self.menuViewController = UIStoryboard.menuViewController()
+        self.menuViewController.modalPresentationStyle = .fullScreen
 
         // Gather content items controllers
         self.contentViewControllers = contentControllers()
@@ -70,13 +70,22 @@ class HostViewController: MenuContainerViewController{
         // Navigation Item
         navigationItem.titleView = titleImage
         
+        // Custom Navigaton Bar Tint Color
+        self.navigationController?.navigationBar.tintColor = UIColor.init(red: 27, green: 20, blue: 100)
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor : UIColor.init(red: 27, green: 20, blue: 100),
+             NSAttributedString.Key.font: UIFont(name: "DIN CONDENSED", size: 23.0)!]
+        
         // Left Bar Menu Button
         let hamburgerImage = UIImage(named: "hamburgerMenu")
         let sideMenuButton = UIBarButtonItem(image: hamburgerImage, style: .plain, target: self, action: #selector(menuButtonClicked))
         navigationItem.leftBarButtonItem = sideMenuButton
         navigationItem.leftBarButtonItem?.tintColor = .black
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        // Custom Back Button Image
+        let BackArrowImage = UIImage(named: "doubleBackArrow")
+        self.navigationController?.navigationBar.backIndicatorImage = BackArrowImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = BackArrowImage
         
         // Right Bar Menu Button
         let homeImage = UIImage(named: "homeBlack")

@@ -34,10 +34,10 @@ class mainCollectionViewCell: UICollectionViewCell {
         let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: 25)
         let label = UILabel(frame: frame)
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
-        label.textColor = .white
-        label.backgroundColor = .darkGray
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
+        label.backgroundColor = .white
         label.textAlignment = .center
-        label.font = UIFont(name: "Rockwell", size: 14)
+        label.font = UIFont(name: "Rockwell", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,7 +60,7 @@ class mainCollectionViewCell: UICollectionViewCell {
         self.addSubview(cellStack)
         
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 25)
+            titleLabel.heightAnchor.constraint(equalToConstant: 30)
             ])
         
         NSLayoutConstraint.activate([

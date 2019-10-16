@@ -12,7 +12,8 @@ import InteractiveSideMenu
 class mainDetailViewController: UIViewController, SideMenuItemContent, Storyboardable{
     
     @IBOutlet weak var detailImage: UIImageView!
-    @IBOutlet weak var detailText: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var detailText: UILabel!
     
     var image = UIImage(named: "noImage")
     var text = ""
@@ -20,8 +21,10 @@ class mainDetailViewController: UIViewController, SideMenuItemContent, Storyboar
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailImage.roundAllImageViewCorners()
         detailImage.image = image
         detailText.text = text
+        
         
 
     }

@@ -70,6 +70,16 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
         return image
     }()
     
+    lazy var refreshControl: UIRefreshControl = {
+        
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        refresh.tintColor = UIColor(red: 27, green: 20, blue: 100)
+        refresh.attributedTitle = NSAttributedString(string: "Fetching Latest Data ...")
+        
+        return refresh
+    }()
+    
     lazy var tableView: UITableView = {
         
         let tv = UITableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
@@ -142,6 +152,8 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.tableView.register(headerMainTableView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        
         print("view controller run")
         
         db = Firestore.firestore()
@@ -180,6 +192,7 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
     func mainScreen(){
     
         view.addSubview(tableView)
+        tableView.addSubview(refreshControl)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -188,6 +201,14 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
 //        tableView.tableFooterView = footerViewScrollView
+    }
+    
+    @objc func refreshTableView(){
+        print("fetching and refreshing table view")
+        loadTableView()
+        refreshControl.endRefreshing()
+        tableView.reloadData()
+        
     }
     
     func loadTableView() {

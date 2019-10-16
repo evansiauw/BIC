@@ -31,8 +31,8 @@ class announcementCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: 35)
         let label = UILabel(frame: frame)
-        label.textColor = .white
-        label.backgroundColor = .darkGray
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
+        label.backgroundColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "Rockwell", size: 18)
         //            label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)

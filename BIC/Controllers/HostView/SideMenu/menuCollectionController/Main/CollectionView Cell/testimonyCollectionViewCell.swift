@@ -23,7 +23,7 @@ class testimonyCollectionViewCell: UICollectionViewCell {
         
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 35)
         let image = UIImageView(frame: frame)
-        image.image = UIImage(named: "noImage")
+        image.image = UIImage(named: "powerOfTestimony")
         image.roundSomeImageCorners(corners: [.topLeft, .topRight], radius: 8)
         image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -35,10 +35,10 @@ class testimonyCollectionViewCell: UICollectionViewCell {
         let frame = CGRect(x: 0, y: cellImage.frame.height, width: self.frame.width, height: 25)
         let label = UILabel(frame: frame)
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
-        label.textColor = .white
-        label.backgroundColor = .darkGray
+        label.textColor = UIColor(red: 27, green: 20, blue: 100)
+        label.backgroundColor = .white
         label.textAlignment = .center
-        label.font = UIFont(name: "Rockwell", size: 14)
+        label.font = UIFont(name: "Rockwell", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -61,7 +61,7 @@ class testimonyCollectionViewCell: UICollectionViewCell {
         self.addSubview(cellStack)
         
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 25)
+            titleLabel.heightAnchor.constraint(equalToConstant: 30)
             ])
         
         NSLayoutConstraint.activate([

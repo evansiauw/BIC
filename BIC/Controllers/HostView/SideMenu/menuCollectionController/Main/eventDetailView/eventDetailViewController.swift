@@ -41,13 +41,14 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         return barButton
     }()
     
-    var titleText = ""
-    var attendeeText = ""
+    var titleText = "8707 Justice Avenue, Elmhurst NY 11373"
+    
+    var numOfAttendees = 0
     var dateText = "To be Announced"
     var descriptionText = ""
     var latitude: CLLocationDegrees!
     var longitude: CLLocationDegrees!
-    
+                       
     lazy var location = CLLocation(latitude: latitude, longitude: longitude)
     let regionRadius: CLLocationDistance = 10000
 
@@ -57,7 +58,13 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         print(location)
         
         titleLabel.text = titleText
-        attendee.text = attendeeText
+        
+        let attendees = NSMutableAttributedString(string: "\(numOfAttendees)",
+            attributes: [.foregroundColor: numOfAttendees == 0 ? UIColor.red : UIColor.init(red: 3, green: 125, blue: 80)])
+        let attendeeString = NSMutableAttributedString(string: " People Going")
+        attendees.append(attendeeString)
+        attendee.attributedText = attendees
+        
         dateLabel.text = dateText
         textView.text = descriptionText
         

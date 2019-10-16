@@ -43,6 +43,7 @@
 		01713A22226E80890008013E /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01713A21226E80890008013E /* infoViewController.swift */; };
 		01713A24226E80BB0008013E /* info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01713A23226E80BB0008013E /* info.storyboard */; };
 		0178D43A22F26F710057AD49 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178D43922F26F710057AD49 /* UILabel.swift */; };
+		018982B52357AA9400D199C0 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018982B42357AA9400D199C0 /* NSMutableAttributedString.swift */; };
 		018B6ADE22A6C51900957EA0 /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */; };
 		018C371122FE45880058514C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C371022FE45880058514C /* UITextField.swift */; };
 		019B15B422753A6700FAD491 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B15B322753A6700FAD491 /* UITextView.swift */; };
@@ -125,6 +126,7 @@
 		01713A21226E80890008013E /* infoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 		01713A23226E80BB0008013E /* info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = info.storyboard; sourceTree = "<group>"; };
 		0178D43922F26F710057AD49 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		018982B42357AA9400D199C0 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		018B6ADD22A6C51900957EA0 /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
 		018C371022FE45880058514C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		019B15B322753A6700FAD491 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				019B15BF2283433700FAD491 /* Storyboardable.swift */,
 				0178D43922F26F710057AD49 /* UILabel.swift */,
 				018C371022FE45880058514C /* UITextField.swift */,
+				018982B42357AA9400D199C0 /* NSMutableAttributedString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				019B15B422753A6700FAD491 /* UITextView.swift in Sources */,
 				0139354A2267D2F800E32ECB /* UIView.swift in Sources */,
 				013345BD224A77F9006F96F0 /* UIStoryboard.swift in Sources */,
+				018982B52357AA9400D199C0 /* NSMutableAttributedString.swift in Sources */,
 				013345CA224C53F3006F96F0 /* UIColor.swift in Sources */,
 				019B15D52284DAC800FAD491 /* donationViewController.swift in Sources */,
 				01713A1B226B5F0C0008013E /* devotional.swift in Sources */,
@@ -937,8 +941,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -957,8 +961,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "evans-company.BIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
