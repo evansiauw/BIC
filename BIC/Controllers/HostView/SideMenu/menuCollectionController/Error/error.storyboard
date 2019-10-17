@@ -18,7 +18,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Errors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awz-BO-PaA">
                                 <rect key="frame" x="0.0" y="5" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.26666666666666666" green="0.25490196078431371" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.10588235294117647" green="0.078431372549019607" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fCc-Rj-Jza"/>
                                 </constraints>
@@ -66,7 +66,7 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P5-ar-ezs">
                                         <rect key="frame" x="0.0" y="272" width="355" height="50"/>
-                                        <color key="backgroundColor" red="0.26666666666666666" green="0.25490196078431371" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.078431372549019607" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jML-fS-OxY"/>
                                         </constraints>

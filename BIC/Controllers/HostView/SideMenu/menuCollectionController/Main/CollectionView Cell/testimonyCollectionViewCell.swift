@@ -10,7 +10,6 @@ import UIKit
 
 
 /* TODO:
- - create stack for cellImage and titleLabel, add constraint to the stack
  -
  -
 */

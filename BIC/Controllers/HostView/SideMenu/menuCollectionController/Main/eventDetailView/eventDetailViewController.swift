@@ -11,10 +11,7 @@ import MapKit
 
 /*
  TODO:
- - lat and long need optional value not force unwrapping
- - lat and long not accurately displayed on map and pin
- - fix constraints on title, date, and attendee
- - add going or not going functionality
+ 
  */
 
 class eventDetailViewController: UIViewController, MKMapViewDelegate{

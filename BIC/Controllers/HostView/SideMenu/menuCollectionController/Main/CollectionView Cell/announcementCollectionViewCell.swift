@@ -9,8 +9,7 @@
 import UIKit
 
 /* TODO:
- - setup a stack for cellImage and titleLabel
- - setup constraint for either cellImage or titleLabel
+ 
  */
 class announcementCollectionViewCell: UICollectionViewCell {
     

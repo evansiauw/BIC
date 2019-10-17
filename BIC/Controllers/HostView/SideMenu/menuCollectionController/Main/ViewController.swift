@@ -22,8 +22,6 @@ enum TableSections: Int {
 
 /* TODO:
  
- - Add constraint to table view. table view header overlap under the navigation bar
- - Add loading animation when table view pulled down
  -
  
  */

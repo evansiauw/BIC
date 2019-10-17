@@ -9,17 +9,27 @@ import UIKit
 import InteractiveSideMenu
 
 /* TODO:
- - Need to fix the cursor on selected menu option when home button pressed
  -
  -
  */
 
 class HostViewController: MenuContainerViewController{
     
+//    lazy var titleView: UIView = {
+//
+//        let nav
+//
+//        let view = UIView(frame: CGRect(x: <#T##Int#>, y: <#T##Int#>, width: <#T##Int#>, height: <#T##Int#>))
+//        return
+//    }()
+    
     lazy var titleImage: UIImageView = {
         
         let image = UIImageView()
         image.image = UIImage(named: "titleText")
+        image.contentMode = .scaleAspectFit
+//        image.widthAnchor.constraint(equalToConstant: 300).isActive = true
+//        image.heightAnchor.constraint(equalToConstant: 40).isActive = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -69,7 +79,7 @@ class HostViewController: MenuContainerViewController{
         
         // Navigation Item
         navigationItem.titleView = titleImage
-        
+
         // Custom Navigaton Bar Tint Color
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 27, green: 20, blue: 100)
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -92,6 +102,7 @@ class HostViewController: MenuContainerViewController{
         let profileMenuButton = UIBarButtonItem(image: homeImage, style: .plain, target: self, action: #selector(homeButtonClicked))
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
+        
     }
     
     @objc func menuButtonClicked(){

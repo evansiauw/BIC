@@ -16,7 +16,8 @@ class headerMainTableView: UITableViewHeaderFooterView {
 
     lazy var addButton: UIButton = {
         
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor(red: 27, green: 20, blue: 100)
         button.setImage(UIImage(named: "addBlack"), for: .normal)
         button.addTarget(self, action: #selector(addPosting), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
