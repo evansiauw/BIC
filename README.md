@@ -1,5 +1,5 @@
 # BIC
-Bethel International Church iOS app
+Bethel International Church iOS app<br/>
 https://www.bethelic.com
 
 ## Screenshot
