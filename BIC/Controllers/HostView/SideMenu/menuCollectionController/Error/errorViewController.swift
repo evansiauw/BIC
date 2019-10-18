@@ -13,26 +13,14 @@ import SwiftEntryKit
 
 class errorViewController: UIViewController {
     
+    // PROPERTIES
+    let db = Firestore.firestore()
+
+    // OUTLETS
     @IBOutlet weak var errorTitle: UITextField!
     @IBOutlet weak var errorDesc: UITextView!
     @IBOutlet weak var submitButton: UIButton!
-    
-    let db = Firestore.firestore()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        errorTitle.underlined()
-        
-        errorDesc.layer.borderWidth = 1.0
-        errorDesc.layer.borderColor = UIColor.darkGray.cgColor
-        errorDesc.layer.cornerRadius = 5.0
-        
-        submitButton.roundAllButtonCorners()
-        
-        // Do any additional setup after loading the view.
-    }
-    
+            
     @IBAction func submitPrayers(_ sender: UIButton) {
         
         guard let title = errorTitle.text, let desc = errorDesc.text, !title.isEmpty, !desc.isEmpty else {
@@ -59,9 +47,24 @@ class errorViewController: UIViewController {
         }
     }
     
+    
+    // VIEW DID LOAD
+    override func viewDidLoad() {
+        super.viewDidLoad()
+            
+//        errorTitle.underlined()
+        errorDesc.layer.borderWidth = 1.0
+        errorDesc.layer.borderColor = UIColor.darkGray.cgColor
+        errorDesc.layer.cornerRadius = 5.0
+        submitButton.roundAllButtonCorners()
+    }
+    
+    
+    
+    // FUNCTIONS
+    // Generate top note entry and set some properties
     func EmptyFieldAlert(){
         
-//         Generate top floating entry and set some properties
         var attributes = EKAttributes.topNote
         attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(UIColor.red), EKColor(UIColor.orange)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
@@ -80,9 +83,9 @@ class errorViewController: UIViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
     
+    // Generate top note entry and set some properties
     func successAlert(){
         
-        // Generate top floating entry and set some properties
         var attributes = EKAttributes.topNote
         attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(UIColor.blue), EKColor(UIColor.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))

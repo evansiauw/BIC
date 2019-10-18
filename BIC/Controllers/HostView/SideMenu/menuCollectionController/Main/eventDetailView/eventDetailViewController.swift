@@ -16,12 +16,15 @@ import MapKit
 
 class eventDetailViewController: UIViewController, MKMapViewDelegate{
     
+    // OUTLETS
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var attendee: UILabel!
     @IBOutlet weak var textView: UITextView!
     
+    
+    // PROPERTIES
     lazy var goingButton: UIBarButtonItem = {
         
         let button = UIButton(type: .custom)
@@ -38,8 +41,8 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         return barButton
     }()
     
-    var titleText = "8707 Justice Avenue, Elmhurst NY 11373"
     
+    var titleText = "8707 Justice Avenue, Elmhurst NY 11373"
     var numOfAttendees = 0
     var dateText = "To be Announced"
     var descriptionText = ""
@@ -49,6 +52,9 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
     lazy var location = CLLocation(latitude: latitude, longitude: longitude)
     let regionRadius: CLLocationDistance = 10000
 
+    
+    
+    //  VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +81,6 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         
         navigationItem.rightBarButtonItems = [notGoingButton,goingButton]
 
-        
         map.delegate = self
         centerMapOnLocation(location: location)
         addPinToMap()

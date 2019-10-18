@@ -9,10 +9,14 @@
 import UIKit
 
 /* TODO:
- 
+ -
+ -
  */
+
+
 class announcementCollectionViewCell: UICollectionViewCell {
     
+    // PROPERTIES
     let padding: CGFloat = 5
     
     lazy var cellImage: UIImageView = {
@@ -34,7 +38,6 @@ class announcementCollectionViewCell: UICollectionViewCell {
         label.backgroundColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "Rockwell", size: 18)
-        //            label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,25 +55,21 @@ class announcementCollectionViewCell: UICollectionViewCell {
         return stack
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.addSubview(cellStack)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 35)
-//            cellImage.heightAnchor.constraint(equalToConstant: 170)
-            ])
-        
+                
         NSLayoutConstraint.activate([
             
+            titleLabel.heightAnchor.constraint(equalToConstant: 35),
+
             cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
             cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10),
             cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
-            
             ])
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

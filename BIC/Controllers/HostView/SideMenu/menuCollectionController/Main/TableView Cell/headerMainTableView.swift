@@ -12,8 +12,10 @@
 
 import UIKit
 
+// CUSTOM MAIN TABLE VIEW SECTION
 class headerMainTableView: UITableViewHeaderFooterView {
 
+    // PROPERTIES
     lazy var addButton: UIButton = {
         
         let button = UIButton(type: .system)
@@ -21,7 +23,6 @@ class headerMainTableView: UITableViewHeaderFooterView {
         button.setImage(UIImage(named: "addBlack"), for: .normal)
         button.addTarget(self, action: #selector(addPosting), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-       
         return button
     }()
     

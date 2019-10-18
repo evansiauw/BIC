@@ -18,7 +18,6 @@ class donationViewController: UIViewController {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
- 
     }
     
     override func viewDidLoad() {

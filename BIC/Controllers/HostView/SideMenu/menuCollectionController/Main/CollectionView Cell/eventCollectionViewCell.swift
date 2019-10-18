@@ -11,6 +11,8 @@ import UIKit
 
 class eventCollectionViewCell: UICollectionViewCell {
     
+    
+    // PROPERTIES
     let labelStackContainerHeight: CGFloat = 90
     let padding: CGFloat = 5
     
@@ -95,6 +97,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         return stack
     }()
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -105,15 +109,8 @@ class eventCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             attendeesLabel.heightAnchor.constraint(equalToConstant: 20),
             dateLabel.heightAnchor.constraint(equalToConstant: 20),
-//            labelStack.heightAnchor.constraint(equalToConstant: labelStackContainerHeight),
             
-            ])
-        
-        NSLayoutConstraint.activate([
-            cellImage.heightAnchor.constraint(equalToConstant: 170)
-            ])
-        
-        NSLayoutConstraint.activate([
+            cellImage.heightAnchor.constraint(equalToConstant: 170),
             
             cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
             cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10),
@@ -121,8 +118,6 @@ class eventCollectionViewCell: UICollectionViewCell {
             cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
 
             ])
-        
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -130,23 +125,6 @@ class eventCollectionViewCell: UICollectionViewCell {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

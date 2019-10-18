@@ -16,6 +16,8 @@ import UIKit
  
 class testimonyCollectionViewCell: UICollectionViewCell {
     
+    
+    // PROPERTIES
     let padding: CGFloat = 5
     
     lazy var cellImage: UIImageView = {
@@ -60,18 +62,14 @@ class testimonyCollectionViewCell: UICollectionViewCell {
         self.addSubview(cellStack)
         
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 30)
-            ])
-        
-        NSLayoutConstraint.activate([
             
+            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+
             cellStack.widthAnchor.constraint(equalToConstant: self.contentView.frame.width),
             cellStack.heightAnchor.constraint(equalToConstant: self.contentView.frame.height - 10),
             cellStack.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             cellStack.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
-            
             ])
-        
     }
     
     override func layoutIfNeeded() {

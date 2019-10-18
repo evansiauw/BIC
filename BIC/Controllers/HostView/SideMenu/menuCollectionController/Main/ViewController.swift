@@ -11,6 +11,13 @@ import Firebase
 import FirebaseFirestore
 import InteractiveSideMenu
 
+/* TODO:
+-
+-
+*/
+
+
+// RETURN TABLE VIEW'S SECTION RAW VALUE
 enum TableSections: Int {
 
     case announcements
@@ -20,23 +27,27 @@ enum TableSections: Int {
     
 }
 
-/* TODO:
- 
- -
- 
- */
-
 class ViewController: MenuContainerViewController, SideMenuItemContent{
     
+    // REFERENCE TO FIRESTORE DATABASE
     var db: Firestore!
     
-    // TableView Sections Properties
-    lazy var screenSize: CGFloat = UIScreen.main.bounds.width
+    
+    
+    // TABLE VIEW SECTION PROPERTIES
+    // Device's screen width
+    lazy var screenWidth: CGFloat = UIScreen.main.bounds.width
+    // Table View's sections name
     let tableViewTitle = ["Announcements", "Upcoming Events", "Weekly Devotional", "Testimonies"]
-    lazy var tableViewWidth: [CGFloat] = [screenSize/1.1, screenSize/2.2, screenSize/2.5, screenSize/2.5]
+    // Specify the width of tableView's cell on each section
+    lazy var tableViewWidth: [CGFloat] = [screenWidth/1.1, screenWidth/2.2, screenWidth/2.5, screenWidth/2.5]
+    // specify the height of tableView's cell on each setion
     let tableViewHeight: [CGFloat] = [230,280,170,170]
+    
 
-    // TableView Models
+    
+    // TABLE VIEW MODEL
+    // Reload each tableView's section upon receiving data
     var announcements: [announcement] = [] {
         didSet {
             tableView.reloadSections([TableSections.announcements.rawValue], with: .fade)
@@ -53,13 +64,14 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
 
         }
     }
-
     var testimonies: [testimony] = [] {
         didSet {
             tableView.reloadSections([TableSections.testimonies.rawValue], with: .fade)
         }
     }
     
+    
+    // PROPERTIES
     lazy var titleImage: UIImageView = {
 
         let image = UIImageView()
@@ -73,8 +85,7 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         refresh.tintColor = UIColor(red: 27, green: 20, blue: 100)
-        refresh.attributedTitle = NSAttributedString(string: "Fetching Latest Data ...")
-        
+//        refresh.attributedTitle = NSAttributedString(string: "Fetching Latest Data ...")
         return refresh
     }()
     
@@ -147,66 +158,35 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
         return button
     }()
     
+    
+    // VIEW DID LOAD
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+                
+        // Register custom tableView's section header
         self.tableView.register(headerMainTableView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
-        print("view controller run")
-        
+        // Initialize Firestore Database
         db = Firestore.firestore()
+        mainScreenSetup()
         loadTableView()
-        mainScreen()
         sideMenuSetup()
-
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .default
-//    }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("view appear")
-//        tableView.reloadData()
-//    }
-//    
-//    override func viewWillAppear(_ animated: Bool) {
-//        print("view will appear")
-//        tableView.reloadData()
-//    }
-
-    func sideMenuSetup() {
-        
-        let screenSize: CGRect = UIScreen.main.bounds
-        self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
-        
-        // Instantiate menu view controller by identifier
-        self.menuViewController = UIStoryboard.menuViewController()
-        self.currentItemOptions.cornerRadius = 10.0
-        
-    }
     
-    // Main Screen setup
-    func mainScreen(){
-    
+    // FUNCTIONS
+    func mainScreenSetup(){
+        
         view.addSubview(tableView)
         tableView.addSubview(refreshControl)
-        
+            
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
-//        tableView.tableFooterView = footerViewScrollView
-    }
-    
-    @objc func refreshTableView(){
-        print("fetching and refreshing table view")
-        loadTableView()
-        refreshControl.endRefreshing()
-        tableView.reloadData()
-        
     }
     
     func loadTableView() {
@@ -238,126 +218,25 @@ class ViewController: MenuContainerViewController, SideMenuItemContent{
         }
 
     }
+            
+    func sideMenuSetup() {
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
+        
+        // Instantiate menu view controller by identifier
+        self.menuViewController = UIStoryboard.menuViewController()
+        self.currentItemOptions.cornerRadius = 10.0
+        
+    }
+        
+    @objc func refreshTableView(){
+        print("fetching and refreshing table view")
+        loadTableView()
+        refreshControl.endRefreshing()
+        tableView.reloadData()
+        
+    }
     
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        
-//        // Options to customize menu transition animation.
-//        var options = TransitionOptions()
-//        
-//        // Animation duration
-//        options.duration = size.width < size.height ? 0.4 : 0.6
-//        
-//        // Part of item content remaining visible on right when menu is shown
-//        options.visibleContentWidth = size.width / 6
-//        self.transitionOptions = options
-//    }
-    
-    
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    func createData(){
-//
-//        let docData: [String: Any] = [
-//
-//            "title": "test",
-//            "description": "test",
-//            "image": "test",
-//            "time": Timestamp(date: Date())
-//        ]
-//
-//        let eventdocData: [String: Any] = [
-//
-//            "title": "test",
-//            "description": "test",
-//            "image": "test",
-//            "eventTime": Timestamp(date: Date()),
-//            "attendee": 50,
-//            "address": "test"
-//        ]
-//
-//        for _ in 1...6 {
-//            db.collection("Weekly Devotional").document().setData(docData){ err in
-//
-//                if let err = err {
-//                    print("Error writing to document: \(err)")
-//                } else {
-//                    print("Document sucessfully written!")
-//                }
-//
-//            }
-//        }
-//
-//        for _ in 1...6 {
-//            db.collection("Announcements").document().setData(docData){ err in
-//
-//                if let err = err {
-//                    print("Error writing to document: \(err)")
-//                } else {
-//                    print("Document sucessfully written!")
-//                }
-//
-//            }
-//        }
-//
-//
-//        for _ in 1...6 {
-//            db.collection("Upcoming Events").document().setData(eventdocData){ err in
-//
-//                if let err = err {
-//                    print("Error writing to document: \(err)")
-//                } else {
-//                    print("Document sucessfully written!")
-//                }
-//
-//            }
-//        }
-//
-//
-//        for _ in 1...6 {
-//            db.collection("Testimonies").document().setData(docData){ err in
-//
-//                if let err = err {
-//                    print("Error writing to document: \(err)")
-//                } else {
-//                    print("Document sucessfully written!")
-//                }
-//
-//            }
-//        }
-//    }
-//

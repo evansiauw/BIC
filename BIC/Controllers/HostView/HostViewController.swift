@@ -9,35 +9,25 @@ import UIKit
 import InteractiveSideMenu
 
 /* TODO:
- -
- -
- */
+-
+-
+*/
 
 class HostViewController: MenuContainerViewController{
     
-//    lazy var titleView: UIView = {
-//
-//        let nav
-//
-//        let view = UIView(frame: CGRect(x: <#T##Int#>, y: <#T##Int#>, width: <#T##Int#>, height: <#T##Int#>))
-//        return
-//    }()
     
+    // PROPERTIES
     lazy var titleImage: UIImageView = {
         
         let image = UIImageView()
         image.image = UIImage(named: "titleText")
         image.contentMode = .scaleAspectFit
-//        image.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        image.heightAnchor.constraint(equalToConstant: 40).isActive = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
     
+    // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +50,7 @@ class HostViewController: MenuContainerViewController{
         self.currentItemOptions.cornerRadius = 10.0
     }
     
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -74,12 +65,17 @@ class HostViewController: MenuContainerViewController{
         self.transitionOptions = options
     }
     
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    
+    
+    // FUNCTIONS
     // Navigation bar setup on the main screen
     func navigationBar(){
         
-        // Navigation Item
-        navigationItem.titleView = titleImage
-
         // Custom Navigaton Bar Tint Color
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 27, green: 20, blue: 100)
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -103,19 +99,43 @@ class HostViewController: MenuContainerViewController{
         navigationItem.rightBarButtonItem = profileMenuButton
         navigationItem.rightBarButtonItem?.tintColor = .black
         
+        
+        // Custom Navigation Item's titleView Image
+        navigationItem.titleView = titleImage
+                
+        let heightPadding: CGFloat = 5
+        let navBarHeight = (navigationController?.navigationBar.frame.size.height)! - heightPadding
+        let navBarwidth = navigationController?.navigationBar.frame.size.width
+        let leftButtonWidth = navigationItem.leftBarButtonItem?.image?.size.width
+        let rightButtonWidth = navigationItem.rightBarButtonItem?.image?.size.width
+        
+        // TEMP SOLUTION NEED TO BE FIXED USING GUARD STATEMENT
+        let widthPadding: CGFloat = 80
+        let availableWidthForTitle: CGFloat = navBarwidth! - leftButtonWidth! - rightButtonWidth! - widthPadding
+
+        NSLayoutConstraint.activate([
+            
+            titleImage.heightAnchor.constraint(equalToConstant: navBarHeight),
+            titleImage.widthAnchor.constraint(equalToConstant: availableWidthForTitle)
+        ])
+        
     }
     
+    // Show side menu
     @objc func menuButtonClicked(){
         showSideMenu()
     }
     
+    // Navigating to main viewController
     @objc func homeButtonClicked(){
         
         print("Navigating to home screen")
         self.selectContentViewController(contentViewControllers.first!)
-
     }
     
+    
+    
+    // COLLECTIONS OF VIEW CONTROLLERS
     private func contentControllers() -> [UIViewController] {
         
         let mainController = UIStoryboard.hostViewController()
@@ -129,9 +149,3 @@ class HostViewController: MenuContainerViewController{
 
     }
 }
-
-
-//        if let profileView = UIStoryboard.profileViewController(){
-//            //            self.navigationController?.pushViewController(profileView, animated: true)
-//            self.present(profileView, animated: true, completion: nil)
-//        }

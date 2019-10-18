@@ -10,9 +10,11 @@ import UIKit
 
 class mainTableViewCell: UITableViewCell {
 
+    // PROPERTIES
     var collectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
     
+    // INITIALIZE COLLECTION VIEW CELL
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -29,8 +31,6 @@ class mainTableViewCell: UITableViewCell {
         collectionView.register(testimonyCollectionViewCell.self, forCellWithReuseIdentifier: "testimonyCollectionViewCell")
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         self.addSubview(collectionView)
@@ -54,7 +54,6 @@ class mainTableViewCell: UITableViewCell {
 }
 
 extension mainTableViewCell{
-    
     
     func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
         

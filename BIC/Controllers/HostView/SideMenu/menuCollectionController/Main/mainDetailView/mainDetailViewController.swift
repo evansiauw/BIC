@@ -25,8 +25,6 @@ class mainDetailViewController: UIViewController, SideMenuItemContent, Storyboar
         detailImage.image = image
         detailText.text = text
         
-        
-
     }
     
 }

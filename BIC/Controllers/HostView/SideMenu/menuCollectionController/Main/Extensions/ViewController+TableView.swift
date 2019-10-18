@@ -20,20 +20,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewTitle.count
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        let title = tableViewTitle[section]
-//        return title
-//    }
-    
+        
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
                     "sectionHeader") as! headerMainTableView
         view.tintColor = .white
         view.title.text = tableViewTitle[section]
-
         return view
     }
     
@@ -46,7 +39,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return tableViewHeight[indexPath.section]
     }
     
@@ -99,7 +91,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                     }
                 })
             }
-            
             
             cell.setNeedsLayout()
             cell.layoutIfNeeded()

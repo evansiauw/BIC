@@ -14,9 +14,12 @@ import InteractiveSideMenu
  */
 class menuTableViewController: MenuViewController, Storyboardable {
     
+    // Side menu properties
     let menuItems = ["Home","Service Schedules","Submit a Prayer Request","Give a Donation","Report an Error", "About Us"]
     let menuItemIcons:[UIImage] = [UIImage(named: "home")!,UIImage(named: "schedule")!,UIImage(named: "pray")!,UIImage(named: "give")!,UIImage(named: "errorWhite")!,UIImage(named: "about")!]
 
+    
+    // OUTLETS
     @IBOutlet weak var avatarImageViewCenterXConstraint: NSLayoutConstraint!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -39,6 +42,7 @@ class menuTableViewController: MenuViewController, Storyboardable {
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        // Select First row of side menu's table view by default
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableView.ScrollPosition.none)
         
         avatarImageView.circleProfile()
@@ -48,17 +52,19 @@ class menuTableViewController: MenuViewController, Storyboardable {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        // Centering the user's profile image
         avatarImageViewCenterXConstraint.constant = -(menuContainerViewController?.transitionOptions.visibleContentWidth ?? 0.0)/2
         
         if gradientLayer.superlayer != nil {
             gradientLayer.removeFromSuperlayer()
         }
         
-        let topColor = UIColor(red: 16.0/255.0, green: 12.0/255.0, blue: 54.0/255.0, alpha: 1.0)
-        let bottomColor = UIColor(red: 57.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, alpha: 1.0)
+        // Add gradient color
+        let leadingColor = UIColor(red: 16.0/255.0, green: 12.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        let trailingColor = UIColor(red: 57.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, alpha: 1.0)
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradientLayer.colors = [leadingColor.cgColor, trailingColor.cgColor]
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
@@ -68,6 +74,8 @@ class menuTableViewController: MenuViewController, Storyboardable {
     }
 }
 
+
+// MENU TABLE VIEW EXTENSION
 extension menuTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,7 +84,6 @@ extension menuTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
-//        return menuContainerViewController?.contentViewControllers.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,7 +107,6 @@ extension menuTableViewController: UITableViewDelegate, UITableViewDataSource {
         menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[indexPath.row])
         menuContainerViewController.hideSideMenu()
 
-        
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
