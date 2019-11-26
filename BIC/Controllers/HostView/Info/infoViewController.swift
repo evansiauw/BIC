@@ -43,6 +43,8 @@ class infoViewController: UIViewController {
         return scrollView
     }()
     
+    
+    // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,7 +85,6 @@ class infoViewController: UIViewController {
     
     @objc func dismissView(){
         self.navigationController?.dismiss(animated: true, completion: nil)
-//        self.navigationController?.popViewController(animated: true)
     }
     
 }

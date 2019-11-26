@@ -8,10 +8,6 @@
 
 /*
  -  Prayer title TextField issue, line doesnt go all the way to end (trailing)
- 
- 
- 
- 
  */
 
 import UIKit

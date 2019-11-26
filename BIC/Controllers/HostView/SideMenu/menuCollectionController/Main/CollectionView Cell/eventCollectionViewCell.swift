@@ -32,7 +32,7 @@ class eventCollectionViewCell: UICollectionViewCell {
 
         let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 40)
         let label = UILabel(frame: frame)
-        label.font = UIFont(name: "Rockwell", size: 18)
+        label.font = UIFont(name: "Rockwell", size: 16)
         label.numberOfLines = 0
 //        label.sizeToFit()
         label.textColor = UIColor(red: 27, green: 20, blue: 100)

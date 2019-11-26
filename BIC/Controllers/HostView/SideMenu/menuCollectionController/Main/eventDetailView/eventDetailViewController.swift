@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import FirebaseAuth
+
 
 /*
  TODO:
@@ -29,6 +31,7 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "yes"), for: .normal)
+        button.addTarget(self, action: #selector(going), for: .touchUpInside)
         let barButton = UIBarButtonItem(customView: button)
         return barButton
     }()
@@ -37,6 +40,7 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "no"), for: .normal)
+        button.addTarget(self, action: #selector(notGoing), for: .touchUpInside)
         let barButton = UIBarButtonItem(customView: button)
         return barButton
     }()
@@ -85,6 +89,40 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         centerMapOnLocation(location: location)
         addPinToMap()
         
+    }
+    
+    @objc func going(){
+        
+        if Auth.auth().currentUser != nil {
+
+            
+        } else {
+            
+            guard let authVC = UIStoryboard.authViewController() else {
+                return
+            }
+            self.present(authVC, animated: true, completion: nil)
+            
+            print("user is not signed in")
+
+        }
+        
+    }
+    
+    @objc func notGoing(){
+        
+        if Auth.auth().currentUser != nil {
+          
+            
+        } else {
+            
+            guard let authVC = UIStoryboard.authViewController() else {
+                return
+            }
+            self.present(authVC, animated: true, completion: nil)
+            
+            print("user is not signed in")
+        }
     }
     
     func centerMapOnLocation(location: CLLocation) {

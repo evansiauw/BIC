@@ -11,7 +11,7 @@
         <!--error-->
         <scene sceneID="4jq-FO-zkc">
             <objects>
-                <viewController storyboardIdentifier="error" title="prayer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZp-fY-UP2" userLabel="error" customClass="errorViewController" customModule="BIC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="error" title="error" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZp-fY-UP2" userLabel="error" customClass="errorViewController" customModule="BIC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3qV-Va-89w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

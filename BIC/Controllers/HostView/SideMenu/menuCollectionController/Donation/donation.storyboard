@@ -59,10 +59,20 @@
                                 <color key="textColor" red="0.10588235294117647" green="0.078431372549019607" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="7AL-kO-cKf">
+                                <rect key="frame" x="148.5" y="545" width="78" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="FPf-wX-E2N"/>
+                                    <constraint firstAttribute="width" constant="78" id="qFg-5H-iUX"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.1058823529" green="0.078431372550000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KLg-tn-ZYd" firstAttribute="top" secondItem="omZ-LW-SZ3" secondAttribute="bottom" id="6Uu-Ar-Xaz"/>
+                            <constraint firstItem="7AL-kO-cKf" firstAttribute="centerX" secondItem="BaB-4y-bNC" secondAttribute="centerX" id="9DH-DC-ud0"/>
                             <constraint firstItem="jMy-Iw-9KX" firstAttribute="top" secondItem="BaB-4y-bNC" secondAttribute="top" constant="5" id="F00-oi-NPO"/>
                             <constraint firstItem="omZ-LW-SZ3" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="10" id="MnI-iF-2RP"/>
                             <constraint firstItem="BaB-4y-bNC" firstAttribute="bottom" secondItem="WLQ-Ax-oCO" secondAttribute="bottom" constant="25" id="PkI-bY-Q3w"/>
@@ -70,6 +80,7 @@
                             <constraint firstItem="KLg-tn-ZYd" firstAttribute="centerY" secondItem="BaB-4y-bNC" secondAttribute="centerY" id="Xvw-3n-auS"/>
                             <constraint firstItem="KLg-tn-ZYd" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="10" id="eB4-Oh-syk"/>
                             <constraint firstItem="WLQ-Ax-oCO" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" constant="25" id="fKe-tv-9KN"/>
+                            <constraint firstItem="WLQ-Ax-oCO" firstAttribute="top" secondItem="7AL-kO-cKf" secondAttribute="bottom" constant="10" id="gyA-FA-9su"/>
                             <constraint firstItem="jMy-Iw-9KX" firstAttribute="leading" secondItem="BaB-4y-bNC" secondAttribute="leading" id="uum-6g-Oq7"/>
                             <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="KLg-tn-ZYd" secondAttribute="trailing" constant="10" id="wcY-QY-o2D"/>
                             <constraint firstItem="BaB-4y-bNC" firstAttribute="trailing" secondItem="WLQ-Ax-oCO" secondAttribute="trailing" constant="25" id="xDD-a9-1vm"/>

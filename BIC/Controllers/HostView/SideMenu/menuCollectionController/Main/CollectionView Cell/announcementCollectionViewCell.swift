@@ -37,7 +37,7 @@ class announcementCollectionViewCell: UICollectionViewCell {
         label.textColor = UIColor(red: 27, green: 20, blue: 100)
         label.backgroundColor = .white
         label.textAlignment = .center
-        label.font = UIFont(name: "Rockwell", size: 18)
+        label.font = UIFont(name: "Rockwell", size: 16)
         label.roundSomeLabelCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
