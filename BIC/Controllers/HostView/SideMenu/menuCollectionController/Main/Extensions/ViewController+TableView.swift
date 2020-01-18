@@ -184,6 +184,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UICollecti
                 }
 
 //                eventDetail.titleText = events[indexPath.item].title
+//                eventDetail.
                 eventDetail.numOfAttendees = events[indexPath.item].attendee
                 eventDetail.descriptionText = events[indexPath.item].description
                 eventDetail.navigationItem.title = events[indexPath.item].title

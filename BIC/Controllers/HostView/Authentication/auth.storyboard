@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ek7-qC-7Fp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -15,37 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ap6-DH-BRu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwE-98-ieh">
-                                <rect key="frame" x="25" y="69" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="bh6-Cg-9t8"/>
-                                    <constraint firstAttribute="height" constant="25" id="pXW-P6-Gdf"/>
-                                </constraints>
-                                <state key="normal" image="cancelButton"/>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6vM-Gd-UWc">
-                                <rect key="frame" x="140" y="63" width="135" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Sign In"/>
-                                    <segment title="Sign Up"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-In-9ie">
-                                <rect key="frame" x="23" y="338" width="369" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.48627450979999998" green="0.59607843140000005" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="MwE-98-ieh" firstAttribute="top" secondItem="crt-5i-YBT" secondAttribute="top" constant="25" id="3BQ-ZG-rkA"/>
-                            <constraint firstItem="MwE-98-ieh" firstAttribute="leading" secondItem="crt-5i-YBT" secondAttribute="leading" constant="25" id="gnd-6j-gi0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="crt-5i-YBT"/>
                     </view>
                 </viewController>
@@ -54,7 +24,4 @@
             <point key="canvasLocation" x="-956.52173913043487" y="1575"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cancelButton" width="25" height="25"/>
-    </resources>
 </document>

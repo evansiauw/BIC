@@ -22,10 +22,10 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var attendee: UILabel!
     @IBOutlet weak var textView: UITextView!
-    
-    
+        
     // PROPERTIES
     lazy var goingButton: UIBarButtonItem = {
         
@@ -46,9 +46,10 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
     }()
     
     
-    var titleText = "8707 Justice Avenue, Elmhurst NY 11373"
+    var addressText = ""
+    var stateText = ""
     var numOfAttendees = 0
-    var dateText = "To be Announced"
+    var dateText = ""
     var descriptionText = ""
     var latitude: CLLocationDegrees!
     var longitude: CLLocationDegrees!
@@ -64,7 +65,8 @@ class eventDetailViewController: UIViewController, MKMapViewDelegate{
         
         print(location)
         
-        titleLabel.text = titleText
+        titleLabel.text = addressText
+        stateLabel.text = stateText
         
         let attendees = NSMutableAttributedString(string: "\(numOfAttendees)",
             attributes: [.foregroundColor: numOfAttendees == 0 ? UIColor.red : UIColor.init(red: 3, green: 125, blue: 80)])
